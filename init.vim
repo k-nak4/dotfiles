@@ -41,3 +41,22 @@ set fileencoding=utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set smartcase
+set hlsearch
+
+" key bind
+" ESCを2回押した時にハイライトを消す
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+" 検索後のジャンプ位置変更
+nnoremap n nzz
+nnoremap N Nzz
+" Tabで対応するペアにジャンプ
+nnoremap <Tab> %
+vnoremap <Tab> %
+" Ctrl + hjklでウィンドウ間を移動
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" w!!でスーパーユーザーとして保存
+cmap w!! w !sudo tee > /dev/null %
