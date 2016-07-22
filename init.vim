@@ -35,7 +35,6 @@ if dein#check_install()
 endif
 
 " settings
-set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
