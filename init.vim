@@ -60,5 +60,3 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " w!!でスーパーユーザーとして保存
 cmap w!! w !sudo tee > /dev/null %
-" filetypeプラグインによるindentをonにする
-filetype plugin indent on
