@@ -1,10 +1,10 @@
 # Setting files
 ## Dotfiles
-・NeoVim
+* NeoVim
 ## Requirements
-・git
-・bash
-・NeoVim
+* git
+* bash
+* NeoVim
 ## Installation
 1. Clone this repository
-2. install ```shell sh link.sh```
+2. install ```sh link.sh```
