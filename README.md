@@ -1,3 +1,10 @@
 # Setting files
-1. NeoVimをインストール
-2. sh link.sh
+## Dotfiles
+. NeoVim
+## Requirements
+. git
+. bash
+. NeoVim
+## Installation
+1. Clone this repository
+2. install ```shell sh link.sh```
