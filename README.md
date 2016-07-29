@@ -1,6 +1,4 @@
-# Setting files
-## Dotfiles
-* NeoVim
+# setting files
 
 ## Requirements
 * git
