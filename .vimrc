@@ -43,6 +43,9 @@ set softtabstop=4
 set shiftwidth=4
 set smartcase
 set hlsearch
+set autoindent
+set smartindent
+highlight Normal ctermbg=none
 
 " key bind
 " ESCを2回押した時にハイライトを消す
@@ -60,3 +63,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " w!!でスーパーユーザーとして保存
 cmap w!! w !sudo tee > /dev/null %
+
+" 自動起動
+let g:seiya_auto_enable=1
+
+
+colorscheme codeschool
+syntax on
