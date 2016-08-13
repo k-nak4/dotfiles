@@ -35,7 +35,7 @@ show_graph_range no
 double_buffer yes
 
 TEXT
-${image ~/Pictures/serial_experiments_lain/gif/lain_004.gif -p 0,100}
+${image ~/Pictures/serial_experiments_lain/gif/back.gif -p 0,100}
 $nodename $kernel
 $hr
 ${font Sans:size=18}$alignc${time %Y年 %m月 %d日 %a}${font}
@@ -75,8 +75,8 @@ $alignc${fs_bar 5,300 /}
 $alignc${fs_bar 5,300 /home}
 $hr
 ${color grey}Networking:
- Down:${color #8844ee} ${downspeedf eth0} k/s${color lightgrey} ${offset 50}Up:${color #22ccff} ${upspeedf eth0} k/s
-${color black}${downspeedgraph eth0 32,150 ff0000 0000ff} $alignr${color black}${upspeedgraph eth0 32,150 0000ff ff0000}
+ Down:${color #8844ee} ${downspeedf wlp3s0} k/s${color lightgrey} ${offset 50}Up:${color #22ccff} ${upspeedf wlp3s0} k/s
+${color black}${downspeedgraph wlp3s0 32,150 ff0000 0000ff} $alignr${color black}${upspeedgraph wlp3s0 32,150 0000ff ff0000}
 ${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
