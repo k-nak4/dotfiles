@@ -1,8 +1,9 @@
-alignment bottom_right
+alignment top_right
+gap_x 21
 own_window_transparent no
 own_window_argb_visual true
 own_window_argb_value 155
-background no
+background yes
 border_width 1
 cpu_avg_samples 2
 default_color white
@@ -34,6 +35,7 @@ show_graph_range no
 double_buffer yes
 
 TEXT
+${image ~/Pictures/serial_experiments_lain/gif/lain_004.gif -p 0,100}
 $nodename $kernel
 $hr
 ${font Sans:size=18}$alignc${time %Y年 %m月 %d日 %a}${font}
@@ -45,7 +47,7 @@ ${color grey}RAM Usage:$color $mem/$memmax - $memperc%
 $alignc${membar 5,300}
 ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc%
 $alignc${swapbar 5,300}
-${color ff5000}CPU Usage:${cpu} %
+${color grey}CPU Usage:${color} ${cpu} %
 # $alignc${cpubar 5,300}
 $alignc${color black}${cpugraph cpu0 32,300 0000ff ff0000}
 ${color 33ff33}CPU1 ${cpu cpu1} %
@@ -63,6 +65,8 @@ ${color grey}Temperature:$color
  ${color grey}M/B$color ${alignr}${hwmon temp 2}℃
 
  ${color grey}/dev/sda $color $alignr${hddtemp /dev/sda}°C
+$hr
+ ${color grey}Right Fan$color ${alignr}${execi 10 sensors | grep 'Right' | cut -c14-23}
 $hr
 ${color grey}File systems:
  / $color${fs_used /}/${fs_size /}
