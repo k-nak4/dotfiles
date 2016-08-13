@@ -45,6 +45,7 @@ set smartcase
 set hlsearch
 set autoindent
 set smartindent
+set showcmd
 highlight Normal ctermbg=none
 
 " key bind
@@ -66,7 +67,14 @@ cmap w!! w !sudo tee > /dev/null %
 
 " 自動起動
 let g:seiya_auto_enable=1
+let g:syntastic_check_on_wq=0
+let g:neocomplete#enable_at_startup=1
 
+" 無限undo
+if has('persistent_undo')
+    set undodir=~/.vim/undo
+    set undofile
+endif
 
 colorscheme codeschool
 syntax on
