@@ -1,6 +1,7 @@
 #!/bin/sh
 mkdir -p ~/.config/nvim/rc
 mkdir -p ~/.vim/rc
+mkdir -p ~/.vim/undo
 #echo 'export XDG_CONFIG_HOME=$HOME/.config' >> $HOME/.bashrc
 
 # Vim
