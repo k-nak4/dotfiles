@@ -36,3 +36,6 @@ repo = 'gko/vim-coloresque'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'Lokaltog/vim-powerline'

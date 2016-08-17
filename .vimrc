@@ -35,6 +35,7 @@ if dein#check_install()
 endif
 
 " settings
+set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
@@ -46,6 +47,7 @@ set hlsearch
 set autoindent
 set smartindent
 set showcmd
+set laststatus=2
 highlight Normal ctermbg=none
 
 " key bind
