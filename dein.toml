@@ -29,9 +29,6 @@ repo = 'hail2u/vim-css3-syntax'
 repo = 'hokaccha/vim-html5validator'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-
-[[plugins]]
 repo = 'gko/vim-coloresque'
 
 [[plugins]]

@@ -47,7 +47,9 @@ set hlsearch
 set autoindent
 set smartindent
 set showcmd
+set cmdheight=2
 set laststatus=2
+set wildmenu
 highlight Normal ctermbg=none
 
 " key bind
@@ -71,6 +73,7 @@ cmap w!! w !sudo tee > /dev/null %
 let g:seiya_auto_enable=1
 let g:syntastic_check_on_wq=0
 let g:neocomplete#enable_at_startup=1
+let g:indent_guides_enable_on_startup=1
 
 " 無限undo
 if has('persistent_undo')
