@@ -34,11 +34,18 @@ if dein#check_install()
   call dein#install()
 endif
 
+" 折り返しに関する設定
+set wrap
+set linebreak
+set showbreak=+\
+set breakindent
+
+
 " settings
 set number
 set expandtab
 set encoding=utf-8
-set fileencoding=utf-8
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
