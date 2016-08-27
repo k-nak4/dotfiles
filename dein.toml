@@ -36,3 +36,6 @@ repo = 'scrooloose/syntastic'
 
 [[plugins]]
 repo = 'Lokaltog/vim-powerline'
+
+[[plugins]]
+repo = 'vim-jp/cpp-vim'

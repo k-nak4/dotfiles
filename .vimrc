@@ -34,14 +34,11 @@ if dein#check_install()
   call dein#install()
 endif
 
-" 折り返しに関する設定
-set wrap
-set linebreak
-set showbreak=+\
-set breakindent
+" 一時的にファイルタイプを無効化
+filetype off
+filetype plugin indent off
 
-
-" settings
+" 基本設定
 set number
 set expandtab
 set encoding=utf-8
@@ -59,7 +56,13 @@ set laststatus=2
 set wildmenu
 highlight Normal ctermbg=none
 
-" key bind
+" 折り返しに関する設定
+set wrap
+set linebreak
+set showbreak=+\ 
+set breakindent
+
+" キーバインド
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " 検索後のジャンプ位置変更
@@ -79,14 +82,23 @@ cmap w!! w !sudo tee > /dev/null %
 " 自動起動
 let g:seiya_auto_enable=1
 let g:syntastic_check_on_wq=0
-let g:neocomplete#enable_at_startup=1
 let g:indent_guides_enable_on_startup=1
+let g:neocomplete#enable_at_startup=1
 
 " 無限undo
 if has('persistent_undo')
-    set undodir=~/.vim/undo
-    set undofile
+  set undodir=~/.vim/undo
+  set undofile
 endif
 
+" C++に関する設定 +++++++++++++++++++++++++++++++++++++
+augroup cpp-path
+  autocmd!
+  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
+augroup END
+" +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+filetype plugin indent on
+set t_Co=256
 colorscheme codeschool
 syntax on
