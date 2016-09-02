@@ -52,7 +52,6 @@ set hlsearch
 set autoindent
 set smartindent
 set showcmd
-set cmdheight=2
 set laststatus=2
 set wildmenu
 highlight Normal ctermbg=none
@@ -97,6 +96,11 @@ let g:indent_guides_guide_size=1
 let g:neocomplete#enable_at_startup=1
 inoremap <expr><CR> pumvisible() ? "<C-n>" . neocomplete#close_popup() : "<CR>"
 
+" lightline
+set guifont=Ubuntu\ Mono\ Powerline\ Italic
+let g:lightline = {
+  \ 'colorscheme': 'solarized',
+  \ }
 
 " 無限undo
 if has('persistent_undo')
