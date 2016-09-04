@@ -34,17 +34,35 @@ if dein#check_install()
   call dein#install()
 endif
 
-" settings
+" 一時的にファイルタイプを無効化
+filetype off
+filetype plugin indent off
+
+" 基本設定
+set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smartcase
 set hlsearch
+set autoindent
+set smartindent
+set showcmd
+set laststatus=2
+set wildmenu
+highlight Normal ctermbg=none
 
-" key bind
+" 折り返しに関する設定
+set wrap
+set linebreak
+set showbreak=+\ 
+set breakindent
+
+" キーバインド
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " 検索後のジャンプ位置変更
@@ -60,3 +78,38 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " w!!でスーパーユーザーとして保存
 cmap w!! w !sudo tee > /dev/null %
+
+" 自動起動
+let g:syntastic_check_on_wq=0
+let g:seiya_auto_enable=1
+
+" vim-indent-guides
+let g:indent_guides_enable_on_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#444433 ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgrey
+let g:indent_guides_guide_size=1
+
+" lightline
+let g:lightline = {
+  \ 'colorscheme': 'solarized',
+  \ }
+
+" 無限undo
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
+
+" C++に関する設定 +++++++++++++++++++++++++++++++++++++
+augroup cpp-path
+  autocmd!
+  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
+augroup END
+" +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+filetype plugin indent on
+set t_Co=256
+colorscheme solarized
+syntax on
