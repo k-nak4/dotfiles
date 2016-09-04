@@ -15,5 +15,8 @@ ln -sf ~/setting-files/dein.toml ~/.config/nvim/rc/dein.toml
 ln -sf ~/setting-files/dein_lazy.toml ~/.config/nvim/rc/dein_lazy.toml
 #echo 'export XDG_CONFIG_HOME=$HOME/.config' >> $HOME/.bashrc
 
+# Vimparator
+ln -sf ~/setting-files/.vimperatorrc ~/.vimperatorrc
+
 # Conky
 ln -sf ~/setting-files/.conkyrc ~/.conkyrc
