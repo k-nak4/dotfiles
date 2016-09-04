@@ -97,7 +97,6 @@ let g:neocomplete#enable_at_startup=1
 inoremap <expr><CR> pumvisible() ? "<C-n>" . neocomplete#close_popup() : "<CR>"
 
 " lightline
-set guifont=Ubuntu\ Mono\ Powerline\ Italic
 let g:lightline = {
   \ 'colorscheme': 'solarized',
   \ }
@@ -117,5 +116,6 @@ augroup END
 
 filetype plugin indent on
 set t_Co=256
+set background=light
 colorscheme codeschool
 syntax on
