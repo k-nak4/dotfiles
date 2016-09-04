@@ -111,5 +111,5 @@ augroup END
 
 filetype plugin indent on
 set t_Co=256
-colorscheme solarized
+colorscheme codeschool
 syntax on
