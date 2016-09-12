@@ -8,13 +8,7 @@ repo = 'miyakogi/seiya.vim'
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
 repo = 'simeji/winresizer'
-
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -48,3 +42,15 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'Mizuchi/STL-Syntax'
+
+[[plugins]]
+repo = 'Shougo/vimproc'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'osyo-manga/unite-quickfix'
+
+[[plugins]]
+repo = 'osyo-manga/shabadou.vim'

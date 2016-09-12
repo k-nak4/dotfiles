@@ -1,4 +1,4 @@
-set titlestring=„Çä„Çì„Åî„Çì
+set titlestring=ÇËÇÒÇËÇÒ
 beep off
 set noerrorbells
 
@@ -6,6 +6,8 @@ map h <C-PageUp>
 map l <C-PageDown>
 map H <Left>
 map L <Right>
+
+map R :source ~/.vimperatorrc
 
 noremap j 5<C-e>
 noremap k 5<C-y>

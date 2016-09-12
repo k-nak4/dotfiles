@@ -43,7 +43,7 @@ set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+"set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -96,10 +96,14 @@ let g:indent_guides_guide_size=1
 let g:neocomplete#enable_at_startup=1
 inoremap <expr><CR> pumvisible() ? "<C-n>" . neocomplete#close_popup() : "<CR>"
 
-" lightline
-let g:lightline = {
+" lightline let g:lightline = {
   \ 'colorscheme': 'solarized',
   \ }
+
+" syntastic
+let g:syntastic_cpp_checkers = ['g++']
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " 無限undo
 if has('persistent_undo')
