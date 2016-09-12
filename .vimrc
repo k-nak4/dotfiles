@@ -101,8 +101,8 @@ inoremap <expr><CR> pumvisible() ? "<C-n>" . neocomplete#close_popup() : "<CR>"
   \ }
 
 " syntastic
-let g:syntastic_cpp_checkers = ['g++']
-let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_compiler = 'gcc'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " 無限undo
