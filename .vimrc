@@ -96,9 +96,10 @@ let g:indent_guides_guide_size=1
 let g:neocomplete#enable_at_startup=1
 inoremap <expr><CR> pumvisible() ? "<C-n>" . neocomplete#close_popup() : "<CR>"
 
-" lightline let g:lightline = {
-  \ 'colorscheme': 'solarized',
-  \ }
+" lightline
+let g:lightline = {
+\ 'colorscheme': 'solarized',
+\ }
 
 " syntastic
 let g:syntastic_cpp_checkers = ['gcc']
