@@ -53,18 +53,11 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 # quartus prime
 export PATH="$PATH:$HOME/altera_lite/16.0/modelsim_ase/bin/:$HOME/altera_lite/16.0/quartus/bin"
 
-export MANPATH="/usr/local/man:$MANPATH"
-source $ZSH/oh-my-zsh.sh
-
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# man
+export MANPATH=/usr/share/man
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -73,16 +66,11 @@ export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # python
-export PYTHONPATH=$HOME/local/lib/python/site-packages:$PYTHONPATH
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias c='killall conky; conky'
 alias p='python3'
@@ -96,3 +84,5 @@ fi
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
+
+source $ZSH/oh-my-zsh.sh
