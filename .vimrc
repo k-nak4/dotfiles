@@ -81,7 +81,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 " 自動起動
 let g:syntastic_check_on_wq=0
-let g:seiya_auto_enable=0
+let g:seiya_auto_enable=1
 let g:neocomplete#enable_at_startup=1
 
 " neocomplete

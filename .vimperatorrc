@@ -1,5 +1,4 @@
-set titlestring=‚è‚ñ‚è‚ñ
-beep off
+set titlestring=FIIIREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEFOX
 set noerrorbells
 
 map h <C-PageUp>
