@@ -43,10 +43,10 @@ set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
-"set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smartcase
 set hlsearch
 set autoindent
@@ -81,24 +81,17 @@ cmap w!! w !sudo tee > /dev/null %
 
 " 自動起動
 let g:syntastic_check_on_wq=0
-let g:seiya_auto_enable=1
+let g:seiya_auto_enable=0
 let g:neocomplete#enable_at_startup=1
-
-" vim-indent-guides
-let g:indent_guides_enable_on_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#444433 ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgrey
-let g:indent_guides_guide_size=1
 
 " neocomplete
 let g:neocomplete#enable_at_startup=1
 inoremap <expr><CR> pumvisible() ? "<C-n>" . neocomplete#close_popup() : "<CR>"
 
-" lightline let g:lightline = {
-  \ 'colorscheme': 'solarized',
-  \ }
+" lightline
+let g:lightline = {
+\ 'colorscheme': 'solarized',
+\ }
 
 " syntastic
 let g:syntastic_cpp_checkers = ['gcc']
