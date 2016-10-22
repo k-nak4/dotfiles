@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="ys"
+ZSH_THEME="powerline"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,6 +50,7 @@ plugins=(git)
 
 # common
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
 # quartus prime
 export PATH="$PATH:$HOME/altera_lite/16.0/modelsim_ase/bin/:$HOME/altera_lite/16.0/quartus/bin"
 
@@ -66,6 +67,9 @@ export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # python
+export PYENV_ROOT=$HOME/.pyenv
+export PATH="$PATH:$PYENV_ROOT/bin"
+eval "$(pyenv init -)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
