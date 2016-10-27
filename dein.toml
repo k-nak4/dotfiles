@@ -54,3 +54,6 @@ repo = 'osyo-manga/unite-quickfix'
 
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
