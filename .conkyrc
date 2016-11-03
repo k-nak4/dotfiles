@@ -1,11 +1,11 @@
 alignment top_right
-gap_y 30
-own_window_transparent no
+gap_y 50
+own_window_transparent yes
 own_window_argb_visual true
 own_window_argb_value 155
 background yes
 border_width 1
-cpu_avg_samples 2
+cpu_avg_samples 4
 default_color white
 default_outline_color white
 default_shade_color white
@@ -25,7 +25,8 @@ out_to_stderr no
 extra_newline no
 own_window yes
 own_window_class Conky
-own_window_type override
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -35,10 +36,7 @@ show_graph_range no
 double_buffer yes
 
 TEXT
-${image ~/Pictures/serial_experiments_lain/gif/back.gif -p 0,100}
-$nodename $kernel
-$hr
-${font Sans:size=18}$alignc${time %Y年 %m月 %d日 %a}${font}
+${font Sans:size=18}$alignc${time %Y / %m / %d / %a}${font}
 ${font Ubuntu:size=36}$alignc${time %H:%M:%S}${font}
 $hr
 ${color grey}Uptime:$color $uptime
@@ -50,13 +48,13 @@ $alignc${swapbar 5,300}
 ${color grey}CPU Usage:${color} ${cpu} %
 # $alignc${cpubar 5,300}
 $alignc${color black}${cpugraph cpu0 32,300 0000ff ff0000}
-${color 33ff33}CPU1 ${cpu cpu1} %
+${color grey}CPU1 ${cpu cpu1} %
 $alignc${cpubar cpu1 5,300}
-${color 33ff33}CPU2 ${cpu cpu2} %
+${color grey}CPU2 ${cpu cpu2} %
 $alignc${cpubar cpu2 5,300}
-${color 33ff33}CPU3 ${cpu cpu3} %
+${color grey}CPU3 ${cpu cpu3} %
 $alignc${cpubar cpu3 5,300}
-${color 33ff33}CPU4 ${cpu cpu4} %
+${color grey}CPU4 ${cpu cpu4} %
 $alignc${cpubar cpu4 5,300}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $hr
@@ -71,8 +69,6 @@ $hr
 ${color grey}File systems:
  / $color${fs_used /}/${fs_size /}
 $alignc${fs_bar 5,300 /}
- /home $color${fs_used /home}/${fs_size /home}
-$alignc${fs_bar 5,300 /home}
 $hr
 ${color grey}Networking:
  Down:${color #8844ee} ${downspeedf wlp3s0} k/s${color lightgrey} ${offset 50}Up:${color #22ccff} ${upspeedf wlp3s0} k/s
@@ -82,5 +78,3 @@ ${color lightgrey} ${top name 1} ${alignr}${top pid 1}     ${top cpu 1}     ${to
 ${color lightgrey} ${top name 2} ${alignr}${top pid 2}     ${top cpu 2}     ${top mem 2}
 ${color lightgrey} ${top name 3} ${alignr}${top pid 3}     ${top cpu 3}     ${top mem 3}
 ${color lightgrey} ${top name 4} ${alignr}${top pid 4}     ${top cpu 4}     ${top mem 4}
-$hr
-${color grey}Desktop:$alignc${color red}${font Ubuntu:size=21}${desktop}$color / ${desktop_number}${font}

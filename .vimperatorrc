@@ -1,12 +1,146 @@
-set titlestring=FIIIREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEFOX
-set noerrorbells
+" ===========================
+" Plugins
+" ===========================
+"vimppm is plugin manager
+source ~/.vimperator/vimppm/vimppm/plugin/vimppm.js
+" Github list
+vimppm 'cd01/vimppm'
 
-map h <C-PageUp>
-map l <C-PageDown>
-map H <Left>
-map L <Right>
+" Vimpr list (only js file)
+vimppm '_libly.js'
+vimppm '_smooziee.js'
+vimppm 'copy.js'
+vimppm 'caret-hint.js'
 
-map R :source ~/.vimperatorrc
+" ===========================
+" Variables
+" ===========================
+" _smooziee.js
+let g:smooziee_scroll_amount="100"
+let g:smooziee_scroll_interval="15"
 
-noremap j 5<C-e>
-noremap k 5<C-y>
+" ===========================
+" Scripts
+" ===========================
+" copy.js
+javascript <<EOM
+  liberator.globalVariables.copy_templates = [
+    {label: 'anchor', value: '<a href=\"%URL\">%TITLE%</a>'},
+    {label: 'hamlAnchor', value: '%a{href: \"%URL%\"} %TITLE%'},
+    {label: 'slimAnchor', value: 'a(href=\"%URL%\") | %TITLE%'},
+    {label: 'jadeAnchor', value: 'a(href=\"%URL%\")%TITLE%'},
+    {label: '', value: ''},
+    {label: 'htmlblockquote', value: '<blockquote cite=\"%URL%\" title=\"%TITLE%\">%HTMLSEL%</blockquote>'},
+    {label: 'selanchor', value: '<a href=\"%URL%\" title=\"%TITLE%\">%SEL%</a>'},
+    {label: 'title', value: '%TITLE%'},
+    {label: 'titleAndUrl', value: '%TITLE%\n%URL%'},
+    {label: 'markdown', value: '[%TITLE%](%URL%)'}
+  ];
+EOM
+
+" ===========================
+" Settings
+" ===========================
+set focuscontent
+set visualbell
+highlight Bell display:none
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+set defsearch=duckduckgo
+set suggestengines=duckduckgo
+set complete=sSltf
+style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+" ===========================
+" key maps
+" ===========================
+map <C-,>l :panorama<Space>list<CR>
+map <C-,>t :panorama<Space>add<Space>
+map <C-,>!t :panorama!<Space>add<Space>
+map <C-,>p :panorama<Space>pulltab<Space>
+map <C-,>!p :panorama!<Space>pulltab<Space>
+map <C-,>s :panorama<Space>stash<Space>
+map <C-,>!s :panorama!<Space>stash<Space>
+map <C-,>d :panorama<Space>remove<Space>
+map <C-,>, :panorama<Space>swich<Space>
+
+noremap ,s :tabopen<Space>duckduckgo<Space>
+map ,r :source<Space>~/.vimperatorrc<CR>
+
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+cnoremap <C-y> <C-v>
+
+" ===========================
+" color scheme
+" ===========================
+highlight Hint<<EOM
+  z-index: 2147483647;
+  margin-top: -4px;
+  margin-left: -10px;
+  padding 0px;
+  width: 1.5em;
+  line-height: 1.1em;
+  background: #333333;
+  box-shadow: 0 0 1px white, 4px 4px 5px black;
+  border-radius: 1em;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  color: #cccccc;
+  text-align: center;
+  opacity: 0.7;
+EOM
+
+highlight HintActive<<EOM
+  color: black;
+  background: rgba(231,123,131,0.6);
+  border-radius: 3px;
+EOM
+
+highlight HintElem<<EOM
+  color: #333333;
+  background: rgba(123,172,218,0.6);
+  border-radius: 3px;
+EOM
+
+highlight Normal<<EOM
+  color: #33FF33;
+  background: #333333;
+EOM
+
+highlight StatusLine<<EOM
+  background: #333333;
+  color: #33FF33;
+  font-weight: normal;
+EOM
+
+highlight CmdLine<<EOM
+  transition: all 0.25s;
+EOM
+
+highlight ErrorMsg<<EOM
+  color: white;
+  background: red;
+  font-weight: bold;
+EOM
+
+highlight WarningMsg<<EOM
+  color: red;
+EOM
+
+highlight CompTitle<<EOM
+  background: #252525;
+EOM
+
+highlight CompTitle>*<<EOM
+  color: #EEEE55;
+  text-shadow: 1px 1px 1px #DDDD44;
+EOM
+
+" vim: set ft=vimperator:
