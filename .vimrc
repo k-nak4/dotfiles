@@ -57,10 +57,10 @@ set wildmenu
 highlight Normal ctermbg=none
 
 " 折り返しに関する設定
-set wrap
-set linebreak
-set showbreak=+\ 
-set breakindent
+"set wrap
+"set linebreak
+"set showbreak=+\ 
+"set breakindent
 
 " キーバインド
 " ESCを2回押した時にハイライトを消す
@@ -81,7 +81,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 " 自動起動
 let g:syntastic_check_on_wq=0
-let g:seiya_auto_enable=1
+let g:seiya_auto_enable=0
 let g:neocomplete#enable_at_startup=1
 
 " neocomplete
@@ -160,8 +160,8 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " vim-indent-guides
 let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=218
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=208
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=blue
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=darkblue
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=0
 
@@ -184,5 +184,5 @@ augroup END
 filetype plugin indent on
 set t_Co=256
 set background=light
-colorscheme codeschool
+colorscheme lucius
 syntax on
