@@ -52,7 +52,12 @@ plugins=(git)
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 
 # quartus prime
-export PATH="$PATH:$HOME/altera_lite/16.0/modelsim_ase/bin/:$HOME/altera_lite/16.0/quartus/bin"
+export PATH="$PATH:$HOME/altera_lite/16.0/modelsim_ase/bin:$HOME/altera_lite/16.0/quartus/bin"
+
+# python
+export PYENV_ROOT=$HOME/.pyenv
+export PATH="$PATH:$PYENV_ROOT/bin"
+eval "$(pyenv init -)"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -66,10 +71,10 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# python
-export PYENV_ROOT=$HOME/.pyenv
-export PATH="$PATH:$PYENV_ROOT/bin"
-eval "$(pyenv init -)"
+# zsh-syntax-highlighting
+if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
