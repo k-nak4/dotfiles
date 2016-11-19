@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="powerline"
+ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -95,3 +95,5 @@ if [[ -x `which colordiff` ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+linuxlogo -L 8
+screenfetch

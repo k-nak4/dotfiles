@@ -1,5 +1,5 @@
 alignment top_right
-gap_y 50
+gap_y 30
 own_window_transparent yes
 own_window_argb_visual true
 own_window_argb_value 155

@@ -44,9 +44,9 @@ set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set smartcase
 set hlsearch
 set autoindent
@@ -81,7 +81,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 " 自動起動
 let g:syntastic_check_on_wq=0
-let g:seiya_auto_enable=0
+let g:seiya_auto_enable=1
 let g:neocomplete#enable_at_startup=1
 
 " neocomplete
@@ -160,10 +160,10 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " vim-indent-guides
 let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=blue
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=darkblue
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=grey
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=darkgrey
 let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size=0
+let g:indent_guides_guide_size=2
 
 " 無限undo
 if has('persistent_undo')
@@ -183,6 +183,6 @@ augroup END
 
 filetype plugin indent on
 set t_Co=256
-set background=light
+set background=dark
 colorscheme lucius
 syntax on
