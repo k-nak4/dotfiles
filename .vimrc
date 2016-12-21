@@ -54,6 +54,7 @@ set smartindent
 set showcmd
 set laststatus=2
 set wildmenu
+set hidden
 highlight Normal ctermbg=none
 
 " 折り返しに関する設定
@@ -170,6 +171,9 @@ if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
+
+" golang
+let g:go_fmt_command="goimports"
 
 " html
 source $VIMRUNTIME/macros/matchit.vim
