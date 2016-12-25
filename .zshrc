@@ -4,10 +4,14 @@
 
 ########################################
 # 環境変数
+#export LANG=en_US
 export LANG=ja_JP.UTF-8
 
 # path
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+# quartus prime
+export PATH=$PATH:$HOME/intelFPGA_lite/16.1/quartus/bin
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
@@ -124,9 +128,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
-alias la='ls -a'
-alias ll='ls -l'
-
+alias ls='ls -U'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'

@@ -15,9 +15,14 @@ fi
 
 # Zsh
 ln -sf ~/setting-files/.zshrc ~/.zshrc
+ln -sf ~/setting-files/.zprofile ~/.zprofile
 
 # Vimparator (firefox's add-on)
 # ln -sf ~/setting-files/.vimperatorrc ~/.vimperatorrc
 
 # Conky
 # ln -sf ~/setting-files/.conkyrc ~/.conkyrc
+
+# capslock to control
+# ln -sf ~/setting-files/.Xmodmap ~/.Xmodmap
+# echo -e "\n# Caps_Lock -> Control\nxmodmap ~/.Xmodmap" >> ~/.profile
