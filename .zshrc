@@ -6,6 +6,9 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 
+# path
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
 # golang
 export PATH=$PATH:/usr/local/go/bin
 
