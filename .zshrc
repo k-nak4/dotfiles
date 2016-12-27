@@ -128,12 +128,11 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
-alias ls='ls -U'
+alias ll='ls -lUF'
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-
-alias mkdir='mkdir -p'
 
 alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
