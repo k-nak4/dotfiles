@@ -2,7 +2,7 @@
 " Plugins
 " ===========================
 "vimppm is plugin manager
-source ~/.vimperator/vimppm/vimppm/plugin/vimppm.js
+source ~/.vimperator/vimppm/plugin/vimppm.js
 " Github list
 vimppm 'cd01/vimppm'
 

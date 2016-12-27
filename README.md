@@ -5,12 +5,8 @@
 
 ## Installation
 1. Clone this repository
-2. install ```sh ./link.sh```
+2. install ```sh install.sh```
 
 ## vimperator
-```
-cd ~/.vimperator
-mkdir vimppm
-cd vimppm
-git clone git://github.com/cd01/vimppm
-```
+1. Run the FireFox
+2. ```:vimppm install```

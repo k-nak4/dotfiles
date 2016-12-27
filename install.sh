@@ -1,9 +1,9 @@
 #!/bin/sh
+
+# Vim
 mkdir -p ~/.vim/rc
 mkdir -p ~/.vim/undo
 mkdir -p ~/.vim/colors
-
-# Vim
 ln -sf ~/setting-files/.vimrc ~/.vimrc
 ln -sf ~/setting-files/dein.toml ~/.vim/rc/dein.toml
 ln -sf ~/setting-files/dein_lazy.toml ~/.vim/rc/dein_lazy.toml
@@ -18,11 +18,11 @@ ln -sf ~/setting-files/.zshrc ~/.zshrc
 ln -sf ~/setting-files/.zprofile ~/.zprofile
 
 # Vimparator (firefox's add-on)
-# ln -sf ~/setting-files/.vimperatorrc ~/.vimperatorrc
+ln -sf ~/setting-files/.vimperatorrc ~/.vimperatorrc
+git clone git://github.com/cd01/vimppm ~/.vimperator/vimppm
+
+# Keymap
+ln -sf ~/setting-files/.Xmodmap ~/.Xmodmap
 
 # Conky
 # ln -sf ~/setting-files/.conkyrc ~/.conkyrc
-
-# capslock to control
-# ln -sf ~/setting-files/.Xmodmap ~/.Xmodmap
-# echo -e "\n# Caps_Lock -> Control\nxmodmap ~/.Xmodmap" >> ~/.profile
