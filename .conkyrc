@@ -43,8 +43,6 @@ ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in MHz):$color $freq
 ${color grey}RAM Usage:$color $mem/$memmax - $memperc%
 $alignc${membar 5,300}
-${color grey}Swap Usage:$color $swap/$swapmax - $swapperc%
-$alignc${swapbar 5,300}
 ${color grey}CPU Usage:${color} ${cpu} %
 # $alignc${cpubar 5,300}
 $alignc${color black}${cpugraph cpu0 32,300 0000ff ff0000}

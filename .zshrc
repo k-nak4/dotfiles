@@ -129,6 +129,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 # エイリアス
 
 alias ll='ls -lUF'
+alias la='ls -alU'
 
 alias rm='rm -i'
 alias cp='cp -i'

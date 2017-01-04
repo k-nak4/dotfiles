@@ -58,10 +58,10 @@ set hidden
 highlight Normal ctermbg=none
 
 " 折り返しに関する設定
-"set wrap
-"set linebreak
-"set showbreak=+\ 
-"set breakindent
+set wrap
+set linebreak
+set showbreak=+\ 
+set breakindent
 
 " キーバインド
 " ESCを2回押した時にハイライトを消す
