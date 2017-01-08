@@ -128,6 +128,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
+alias l='ls'
 alias ll='ls -lUF'
 alias la='ls -alU'
 
@@ -135,8 +136,14 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias offkeyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
-alias onkeyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
+# Keyboard 無効化 (MacOS Sierra)
+alias offkeyboard='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+alias onkeyboard='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+
+# Keyboard 無効化 (Arch Linux on Macbook)
+alias offkeyb='xinput set-prop "Apple Inc. Apple Internal Keyboard / Trackpad" --type=int --format=8 "Device Enabled" 0'
+alias onkeyb='xinput set-prop "Apple Inc. Apple Internal Keyboard / Trackpad" --type=int --format=8 "Device Enabled" 1'
+
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
