@@ -1,40 +1,19 @@
 # 少し凝った zshrc
 # License : MIT
 # http://mollifier.mit-license.org/
-
 ########################################
-# 環境変数
-#export LANG=en_US
-export LANG=ja_JP.UTF-8
 
-# path
-export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-
-# quartus prime
-export PATH=$PATH:$HOME/intelFPGA_lite/16.1/quartus/bin
-
-# golang
-export PATH=$PATH:/usr/local/go/bin
+umask 022
+limit coredumpsize 0
+bindkey -d
 
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
 
-# emacs 風キーバインドにする
-bindkey -v
-
-# ヒストリの設定
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-
 # プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
-
+PROMPT="%{${fg[cyan]}%}[%n@%m]%{${reset_color}%} %~
+%{${fg[green]}%}%#%{${reset_color}%}  "
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -182,3 +161,8 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
+
+# Prezto
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
