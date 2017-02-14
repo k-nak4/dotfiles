@@ -1,32 +1,31 @@
+# プラグイン管理用
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'simeji/winresizer'
-
+# 行末のホワイトスペース可視化
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
+# エディタ上でカラー確認
 [[plugins]]
 repo = 'gko/vim-coloresque'
 
+# 構文解析
 [[plugins]]
 repo = 'scrooloose/syntastic'
 
+# ステータスバー装飾
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-
+# 非同期処理を可能にする
 [[plugins]]
 repo = 'Shougo/vimproc'
 
+# インデントガイドを表示
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
+# カッコやクォートを自動補完
 [[plugins]]
-repo = 'fatih/vim-go'
+repo = 'MetalPhaeton/easybracket-vim'

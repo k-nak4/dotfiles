@@ -10,7 +10,7 @@ export LC_CTYPE="${LANGUAGE}"
 
 # Editor
 export EDITOR=vim
-export GIT_EIDITOR="${EDITOR}"
+export GIT_EDITOR="${EDITOR}"
 
 # History
 export HISTFILE=~/.zsh_history

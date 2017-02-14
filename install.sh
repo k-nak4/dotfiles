@@ -8,7 +8,7 @@ KEYMAP=0
 CONKY=0
 
 # Vim
-if [ $VIM = 1 ]; then 
+if [ $VIM = 1 ]; then
     mkdir -p ~/.vim/rc
     mkdir -p ~/.vim/undo
     mkdir -p ~/.vim/colors
@@ -25,23 +25,23 @@ else
 fi
 
 # Zsh
-if [ $ZSH = 1 ]; then 
+if [ $ZSH = 1 ]; then
     ln -sf ~/setting-files/.zshrc ~/.zshrc
     ln -sf ~/setting-files/.zshenv ~/.zshenv
-#    ln -sf ~/setting-files/.zprofile ~/.zprofile
+    ln -sf ~/setting-files/.zprofile ~/.zprofile
 else
     echo "skip: zsh"
 fi
 
 # tmux
-if [ $TMUX = 1 ]; then 
+if [ $TMUX = 1 ]; then
     ln -sf ~/setting-files/.tmux.conf ~/.tmux.conf
 else
     echo "skip: tmux"
 fi
 
 # Vimparator (firefox's add-on)
-if [ $VIMPARATOR = 1 ]; then 
+if [ $VIMPARATOR = 1 ]; then
     ln -sf ~/setting-files/.vimperatorrc ~/.vimperatorrc
     if [ -e ~/.vimperator/vimppm ]; then
         echo "skip : vimppm is already installed."
@@ -53,14 +53,14 @@ else
 fi
 
 # Keymap
-if [ $KEYMAP = 1 ]; then 
+if [ $KEYMAP = 1 ]; then
     ln -sf ~/setting-files/.Xmodmap ~/.Xmodmap
 else
     echo "skip: keymap"
 fi
 
 # Conky
-if [ $CONKY = 1 ]; then 
+if [ $CONKY = 1 ]; then
     ln -sf ~/setting-files/.conkyrc ~/.conkyrc
 else
     echo "skip: conky"

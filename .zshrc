@@ -116,13 +116,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Keyboard 無効化 (MacOS Sierra)
-alias offkeyboard='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
-alias onkeyboard='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
-
-# Keyboard 無効化 (Arch Linux on Macbook)
-alias offkeyb='xinput set-prop "Apple Inc. Apple Internal Keyboard / Trackpad" --type=int --format=8 "Device Enabled" 0'
-alias onkeyb='xinput set-prop "Apple Inc. Apple Internal Keyboard / Trackpad" --type=int --format=8 "Device Enabled" 1'
-
+alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+alias macos_keyboard_enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
@@ -160,9 +155,20 @@ case ${OSTYPE} in
         ;;
 esac
 
-# vim:set ft=zsh:
-
 # Prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# Peco
+bindkey '^]' peco-src
+
+function peco-src() {
+    local src=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$src" ]; then
+        BUFFER="cd $src"
+        zle accept-line
+    fi
+    zle -R -c
+}
+zle -N peco-src

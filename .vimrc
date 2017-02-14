@@ -1,3 +1,5 @@
+" ################################################################################
+
 " pluginがインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim
@@ -34,16 +36,20 @@ if dein#check_install()
   call dein#install()
 endif
 
+" ################################################################################
+
 " 一時的にファイルタイプを無効化
 filetype off
 filetype plugin indent off
+
+" ################################################################################
 
 " 基本設定
 set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+" set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -63,6 +69,14 @@ set linebreak
 set showbreak=+\ 
 set breakindent
 
+" 永続undo
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
+
+" ################################################################################
+
 " キーバインド
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
@@ -80,14 +94,12 @@ nnoremap <C-l> <C-w>l
 " w!!でスーパーユーザーとして保存
 cmap w!! w !sudo tee > /dev/null %
 
+" ################################################################################
+
 " 自動起動
 let g:syntastic_check_on_wq=0
-let g:seiya_auto_enable=1
-let g:neocomplete#enable_at_startup=1
 
-" neocomplete
-let g:neocomplete#enable_at_startup=1
-inoremap <expr><CR> pumvisible() ? "<C-n>" . neocomplete#close_popup() : "<CR>"
+" ################################################################################
 
 " lightline
 let g:lightline = {
@@ -154,10 +166,7 @@ function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-" syntastic
-let g:syntastic_cpp_checkers = ['gcc']
-let g:syntastic_cpp_compiler = 'gcc'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+" ################################################################################
 
 " vim-indent-guides
 let g:indent_guides_auto_colors=0
@@ -166,27 +175,12 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=darkgrey
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 
-" 無限undo
-if has('persistent_undo')
-  set undodir=~/.vim/undo
-  set undofile
-endif
+" ################################################################################
 
-" golang
-let g:go_fmt_command="goimports"
-
-" html
-source $VIMRUNTIME/macros/matchit.vim
-
-" C++に関する設定 +++++++++++++++++++++++++++++++++++++
-augroup cpp-path
-  autocmd!
-  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
-augroup END
-" +++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-filetype plugin indent on
 set t_Co=256
 set background=dark
 colorscheme lucius
+filetype plugin indent on
 syntax on
+
+" ################################################################################
