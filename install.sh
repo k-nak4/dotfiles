@@ -1,8 +1,8 @@
 #!/bin/sh
 
-VIM=1
-ZSH=1
-TMUX=1
+VIM=0
+ZSH=0
+TMUX=0
 VIMPARATOR=0
 KEYMAP=0
 CONKY=0
@@ -36,6 +36,8 @@ fi
 # tmux
 if [ $TMUX = 1 ]; then
     ln -sf ~/setting-files/.tmux.conf ~/.tmux.conf
+    ln -sf ~/setting-files/.tmux-powerlinerc ~/.tmux-powerlinerc
+    git clone git://github.com/erikw/tmux-powerline.git ~/tmux-powerline.git
 else
     echo "skip: tmux"
 fi
