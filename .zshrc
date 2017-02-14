@@ -11,10 +11,6 @@ bindkey -d
 autoload -Uz colors
 colors
 
-# プロンプト
-PROMPT="%{${fg[cyan]}%}[%n@%m]%{${reset_color}%} %~
-%{${fg[green]}%}%#%{${reset_color}%}  "
-
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
 select-word-style default

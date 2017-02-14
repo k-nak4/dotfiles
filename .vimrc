@@ -177,6 +177,20 @@ let g:indent_guides_guide_size=1
 
 " ################################################################################
 
+" Go言語
+
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+if $GOPATH != ''
+    execute "set rtp+=".globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
+    let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+endif
+
+" ################################################################################
+
 set t_Co=256
 set background=dark
 colorscheme lucius

@@ -29,3 +29,7 @@ repo = 'nathanaelkane/vim-indent-guides'
 # カッコやクォートを自動補完
 [[plugins]]
 repo = 'MetalPhaeton/easybracket-vim'
+
+# Go言語プラグイン
+[[plugins]]
+repo = 'fatih/vim-go'
