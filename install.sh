@@ -3,6 +3,7 @@
 VIM=0
 ZSH=0
 TMUX=0
+PREZTO=0
 VIMPERATOR=0
 KEYMAP=0
 CONKY=0
@@ -31,6 +32,13 @@ if [ $ZSH = 1 ]; then
     ln -sf ~/setting-files/.zprofile ~/.zprofile
 else
     echo "skip: zsh"
+fi
+
+# Prezto
+if [ $PREZTO = 1 ]; then
+    ln -sf ~/setting-files/.zpreztorc ~/.zpreztorc
+else
+    echo "skip: Prezto"
 fi
 
 # tmux
