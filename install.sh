@@ -3,7 +3,7 @@
 VIM=0
 ZSH=0
 TMUX=0
-VIMPARATOR=0
+VIMPERATOR=0
 KEYMAP=0
 CONKY=0
 
@@ -42,8 +42,8 @@ else
     echo "skip: tmux"
 fi
 
-# Vimparator (firefox's add-on)
-if [ $VIMPARATOR = 1 ]; then
+# Vimperator (firefox's add-on)
+if [ $VIMPERATOR = 1 ]; then
     ln -sf ~/setting-files/.vimperatorrc ~/.vimperatorrc
     if [ -e ~/.vimperator/vimppm ]; then
         echo "skip : vimppm is already installed."
