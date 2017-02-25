@@ -33,3 +33,10 @@ repo = 'MetalPhaeton/easybracket-vim'
 # Go言語プラグイン
 [[plugins]]
 repo = 'fatih/vim-go'
+
+# pythonプラグイン
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+
+[[plugins]]
+repo = 'kevinw/pyflakes-vim'
