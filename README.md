@@ -5,7 +5,7 @@
 * Zsh
 
 ## Optional
-* Zprezto
+* Prezto
 * Tmux
 * Vimperator
 * Conky
