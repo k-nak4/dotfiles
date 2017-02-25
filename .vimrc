@@ -96,11 +96,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 " ################################################################################
 
-" 自動起動
-let g:syntastic_check_on_wq=0
-
-" ################################################################################
-
 " lightline
 let g:lightline = {
 \   'colorscheme': 'wombat',
@@ -174,6 +169,15 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=grey
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=darkgrey
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
+
+" ################################################################################
+
+" Syntastic
+let g:syntastic_check_on_wq=0
+let g:syntastic_mode_map = {
+            \ 'mode': 'active',
+            \ 'passive_filetypes': ['python']
+            \}
 
 " ################################################################################
 
