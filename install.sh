@@ -2,8 +2,8 @@
 
 VIM=0
 ZSH=0
-TMUX=0
 PREZTO=0
+TMUX=0
 VIMPERATOR=0
 KEYMAP=0
 CONKY=0
@@ -36,6 +36,7 @@ fi
 
 # Prezto
 if [ $PREZTO = 1 ]; then
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
     ln -sf ~/setting-files/.zpreztorc ~/.zpreztorc
 else
     echo "skip: Prezto"
