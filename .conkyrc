@@ -1,4 +1,4 @@
-alignment top_right
+alignment top_left
 gap_y 30
 own_window_transparent yes
 own_window_argb_visual true
@@ -15,8 +15,8 @@ draw_outline no
 draw_shades no
 override_utf8_locale yes
 use_xft yes
-xftfont TakaoGothic:style=Regular:size=12
-minimum_size 320 5
+xftfont TakaoGothic:style=Regular:size=10
+minimum_size 100 5
 maximum_width 320
 net_avg_samples 2
 no_buffers yes
@@ -25,7 +25,7 @@ out_to_stderr no
 extra_newline no
 own_window yes
 own_window_class Conky
-own_window_type normal
+own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 stippled_borders 0
 update_interval 1.0
@@ -43,6 +43,7 @@ ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in MHz):$color $freq
 ${color grey}RAM Usage:$color $mem/$memmax - $memperc%
 $alignc${membar 5,300}
+${color grey}CPU Temp:${color} ${execi 10 sensors | grep 'Core\ 0' | cut -c18-21}℃
 ${color grey}CPU Usage:${color} ${cpu} %
 # $alignc${cpubar 5,300}
 $alignc${color black}${cpugraph cpu0 32,300 0000ff ff0000}
@@ -56,13 +57,7 @@ ${color grey}CPU4 ${cpu cpu4} %
 $alignc${cpubar cpu4 5,300}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $hr
-${color grey}Temperature:$color
- ${color grey}CPU$color ${alignr}${hwmon temp 1}℃
- ${color grey}M/B$color ${alignr}${hwmon temp 2}℃
-
- ${color grey}/dev/sda $color $alignr${hddtemp /dev/sda}°C
-$hr
- ${color grey}Right Fan$color ${alignr}${execi 10 sensors | grep 'Right' | cut -c14-23}
+ ${color grey}Right Fan$color ${alignr}${execi 10 sensors | grep 'fan1' | cut -c14-17}
 $hr
 ${color grey}File systems:
  / $color${fs_used /}/${fs_size /}
