@@ -2,11 +2,14 @@
 
 ## Requirements
 * Git
+* Zsh
 
 ## Optional
+* Zprezto
 * Tmux
 * Vimperator
 * Conky
+* Peco
 
 ## Installation
 1. Change directory to ```$HOME```
