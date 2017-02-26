@@ -49,7 +49,6 @@ set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
-" set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -61,6 +60,7 @@ set showcmd
 set laststatus=2
 set wildmenu
 set hidden
+set backspace=indent,eol,start
 highlight Normal ctermbg=none
 
 " 折り返しに関する設定
@@ -174,10 +174,6 @@ let g:indent_guides_guide_size=1
 
 " Syntastic
 let g:syntastic_check_on_wq=0
-let g:syntastic_mode_map = {
-            \ 'mode': 'active',
-            \ 'passive_filetypes': ['python']
-            \}
 
 " ################################################################################
 
