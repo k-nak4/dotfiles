@@ -11,16 +11,16 @@ bindkey -d
 autoload -Uz colors
 colors
 
-# Prompt
-PROMPT='> '
-RPROMPT=''
-
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Prompt
+PROMPT='[%{${fg[yellow]}%}%D %T%{${reset_color}%}]%{${fg[cyan]}%}%~%{${reset_color}%}$ '
+RPROMPT=''
 
 ########################################
 # オプション
@@ -55,7 +55,6 @@ setopt hist_reduce_blanks
 setopt extended_glob
 
 # エイリアス
-
 alias l='ls'
 alias ll='ls -lUF'
 alias la='ls -alU'
@@ -64,48 +63,13 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-# Keyboard 無効化 (MacOS Sierra)
-alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
-alias macos_keyboard_enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
-# グローバルエイリアス
-alias -g L='| less'
-alias -g G='| grep'
-
-# C で標準出力をクリップボードにコピーする
-# mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
-if which pbcopy >/dev/null 2>&1 ; then
-    # Mac
-    alias -g C='| pbcopy'
-elif which xsel >/dev/null 2>&1 ; then
-    # Linux
-    alias -g C='| xsel --input --clipboard'
-elif which putclip >/dev/null 2>&1 ; then
-    # Cygwin
-    alias -g C='| putclip'
-fi
-
 ########################################
-# OS 別の設定
-case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -G -F'
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls -F --color=auto'
-        ;;
-esac
-
-# Prezto
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# User command                         #
+########################################
 
 # Peco
 bindkey '^]' peco-src
@@ -119,3 +83,7 @@ function peco-src() {
     zle -R -c
 }
 zle -N peco-src
+
+# Keyboard 無効化 (MacOS Sierra)
+alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+alias macos_keyboard_enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
