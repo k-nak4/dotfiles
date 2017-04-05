@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VIM=0
-ZSH=0
+ZSH=1
 PREZTO=0
 TMUX=0
 VIMPERATOR=0

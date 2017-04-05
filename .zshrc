@@ -1,8 +1,24 @@
-# 少し凝った zshrc
-# License : MIT
-# http://mollifier.mit-license.org/
-########################################
+# Prompt
+PROMPT='[%D %T]%~$ '
+RPROMPT=''
 
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="ys"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
 umask 022
 limit coredumpsize 0
 bindkey -d
@@ -17,10 +33,6 @@ compinit
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# Prompt
-PROMPT='[%{${fg[yellow]}%}%D %T%{${reset_color}%}]%{${fg[cyan]}%}%~%{${reset_color}%}$ '
-RPROMPT=''
 
 ########################################
 # オプション
@@ -63,12 +75,9 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
-########################################
-# User command                         #
 ########################################
 
 # Peco

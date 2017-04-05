@@ -174,6 +174,8 @@ let g:indent_guides_guide_size=1
 
 " Syntastic
 let g:syntastic_check_on_wq=0
+let g:syntastic_cpp_compiler="g++"
+let g:syntastic_cpp_compiler_options="-std=c++14"
 
 " ################################################################################
 
