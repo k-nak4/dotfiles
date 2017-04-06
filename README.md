@@ -1,15 +1,13 @@
 # setting-files
 
 ## Requirements
-* Git
-* Zsh
+* git
+* zsh
 
 ## Optional
-* Prezto
 * Tmux
-* Vimperator
-* Conky
 * Peco
+* ghq
 
 ## Installation
 1. Change directory to ```$HOME```
