@@ -1,0 +1,7 @@
+[user]
+	name = Kazuki Nakajima
+	email = 0xff.0xff.510@gmail.com
+[core]
+	editor = vim
+[ghq]
+	root = /home/k-naka/dev/src

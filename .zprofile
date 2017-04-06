@@ -23,14 +23,15 @@ path=(
 # ------------------------------------------------------------------------
 export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 
 # ------------------------------------------------------------------------
 # Python3
 # ------------------------------------------------------------------------
-PYENV_ROOT=~/.pyenv
-export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#PYENV_ROOT=~/.pyenv
+#export PATH=$PATH:$PYENV_ROOT/bin
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).

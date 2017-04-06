@@ -96,3 +96,6 @@ zle -N peco-src
 # Keyboard 無効化 (MacOS Sierra)
 alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 alias macos_keyboard_enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+
+# g++
+alias gpp='g++ -std="c++14"'

@@ -1,12 +1,20 @@
 #!/bin/sh
 
+GIT=0
 VIM=0
-ZSH=1
+ZSH=0
 PREZTO=0
 TMUX=0
 VIMPERATOR=0
 KEYMAP=0
 CONKY=0
+
+# Git
+if [ $GIT = 1 ]; then
+    ln -sf ~/setting-files/.gitconfig ~/.gitconfig
+else
+    echo "skip: git"
+fi
 
 # Vim
 if [ $VIM = 1 ]; then
@@ -46,7 +54,7 @@ fi
 if [ $TMUX = 1 ]; then
     ln -sf ~/setting-files/.tmux.conf ~/.tmux.conf
     ln -sf ~/setting-files/.tmux-powerlinerc ~/.tmux-powerlinerc
-    git clone git://github.com/erikw/tmux-powerline.git ~/tmux-powerline.git
+    git clone git://github.com/erikw/tmux-powerline.git ~/tmux-powerline
 else
     echo "skip: tmux"
 fi
