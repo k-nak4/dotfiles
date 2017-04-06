@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# require : upower
+# "upower --enumerate" を実行することで、デバイスのパスを取得可能
+
+BATTERY_PATH="/org/freedesktop/UPower/devices/battery_BAT0"
+
+upower -i $BATTERY_PATH | grep percentage | cut -c 5-28

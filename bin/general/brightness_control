@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Root権限で実行する
+
+BRIGHTNESS_PATH="/sys/class/backlight/intel_backlight/brightness"
+MAX_BRIGHTNESS=3000
+MIN_BRIGHTNESS=300
+
+echo -e "ディスプレイの輝度を入力 [0~3000]"
+read value
+
+if [ $value -le $MAX_BRIGHTNESS ] && [ $value -ge $MIN_BRIGHTNESS ]; then
+    tee $BRIGHTNESS_PATH <<< $value
+else
+    echo "error: $MIN_BRIGHTNESS~$MAX_BRIGHTNESSの値を入力してください。" 1>&2
+fi
+
