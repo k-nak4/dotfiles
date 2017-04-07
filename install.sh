@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Param
-GIT=1
-VIM=1
+GIT=0
+VIM=0
 ZSH=1
-TMUX=1
+TMUX=0
 KEYMAP=0
 
 # Vars
@@ -36,9 +36,13 @@ fi
 
 # zsh
 if [ $ZSH = 1 ]; then
-    ln -sf ~/$DIR_NAME/zsh/.zshrc ~/.zshrc
+    mkdir -p ${HOME}/.zsh
     ln -sf ~/$DIR_NAME/zsh/.zshenv ~/.zshenv
-    ln -sf ~/$DIR_NAME/zsh/.zprofile ~/.zprofile
+    ln -sf ~/$DIR_NAME/zsh/.zshenv ~/.zsh/.zshenv
+    ln -sf ~/$DIR_NAME/zsh/.zshrc ~/.zsh/.zshrc
+    ln -sf ~/$DIR_NAME/zsh/.zsh_main ~/.zsh/.zsh_main
+    ln -sf ~/$DIR_NAME/zsh/.zsh_option ~/.zsh/.zsh_option
+    ln -sf ~/$DIR_NAME/zsh/.zsh_alias ~/.zsh/.zsh_alias
 else
     echo "skip: zsh"
 fi

@@ -1,0 +1,73 @@
+# pathの設定
+path=(\
+    ${HOME}/local/bin(N-/) \
+    /usr/local/bin(N-/) \
+    /usr/local/sbin(N-/) \
+    /usr/bin(N-/) \
+    /usr/sbin(N-/) \
+    /bin(N-/) \
+    /sbin(N-/) \
+    ${path} \
+)
+
+# LD_LIBRARY_PATHで(N-/)などを使えるようにする
+if [ -z "${ld_library_path}" ]; then
+    typeset -T LD_LIBRARY_PATH ld_library_path
+fi
+if [ -z "${ld_library_path_64}" ]; then
+    typeset -T LD_LIBRARY_PATH_64 ld_library_path_64
+fi
+
+ld_library_path=(\
+    ${HOME}/local/lib(N-/) \
+    /usr/local/lib(N-/) \
+    /usr/lib(N-/) \
+    /lib(N-/) \
+    ${ld_library_path} \
+)
+
+ld_library_path_64=(\
+    ${HOME}/local/lib64(N-/) \
+    /usr/local/lib64(N-/) \
+    /usr/lib64(N-/) \
+    /lib64(N-/) \
+    ${ld_library_path_64} \
+)
+
+# 重複するパスを削除
+typeset -U path ld_library_path ld_library_path_64
+export PATH LD_LIBRARY_PATH LD_LIBRARY_PATH_64
+
+# Kernel
+export KERNEL_NAME="`uname -s`"
+
+# Language
+export LANGUAGE="en_US.UTF-8"
+export LANG="${LANGUAGE}"
+export LC_ALL="${LANGUAGE}"
+export LC_CTYPE="${LANGUAGE}"
+
+# Editor, Pager
+export EDITOR=vim
+export GIT_EDITOR="${EDITOR}"
+export PAGER="less"
+
+# History
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+
+# ------------------------------------------------------------------------
+# Golang
+# ------------------------------------------------------------------------
+export GOPATH=${HOME}/dev
+export PATH=${GOPATH}/bin:${PATH}
+export PATH=/usr/local/go/bin:${PATH}
+
+# ------------------------------------------------------------------------
+# Python3
+# ------------------------------------------------------------------------
+export PYENV_ROOT=~/.pyenv
+export PATH=$PYENV_ROOT/bin:${PATH}
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

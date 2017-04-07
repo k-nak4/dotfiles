@@ -1,0 +1,24 @@
+# デフォルトエイリアスを削除
+unalias -m \*
+
+# 基本
+alias c="clear"
+alias ...="../.."
+alias .....="../../.."
+alias .......="../../../.."
+alias .........="../../../../.."
+alias less="less -IMx4 -X"
+alias ls="ls -hF"
+alias ll="ls -l"
+alias la="ls -a"
+alias mv="mv -i"
+alias rm="rm -i"
+alias sudo="sudo "
+alias src="source ${ZDOTDIR}/.zshrc"
+
+# Keyboard 無効化 (macOS Sierra)
+alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+alias macos_keyboard_enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+
+# 競技プログラミング用
+alias gpp='g++ -std="c++14"'
