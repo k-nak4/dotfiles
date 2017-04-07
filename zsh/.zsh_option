@@ -139,8 +139,41 @@ autoload -Uz compinit && compinit -u
 autoload -Uz colors && colors
 
 # Prompt
-PROMPT='[%D %T]%~$ '
-RPROMPT=''
+# 上から順に、ユーザ名、ホスト名、カレントディレクトリ、グループ名、プロンプト
+# プロンプトは、スーパーユーザ時に #
+# スーパーユーザ以外かつ直前のコマンドの終了コードが 0 であるなら !, 0 でないなら $
+p_usr="%{${fg[green]}%}%n%{${reset_color}%}"
+p_hst="%{${fg[magenta]}%}@%m%{${reset_color}%}"
+p_dir="%{${fg[cyan]}%}:%/%{${reset_color}%}"
+p_grp="[${GROUP}]"
+p_prt="%(?!%(!.#.$) !? )"
+PROMPT="${p_usr}${p_hst}${p_dir}"$'\n'"${p_grp}${p_prt}"
+
+# if ... fi とか "..." など、複数行にわたる場合
+PROMPT2="%{${fg[yellow]}%}%_> %{${reset_color}%}"
+
+# コマンド訂正時
+SPROMPT="%{${fg[yellow]}%}correct%{${reset_color}%}: %{${fg[red]}%}%R%{${reset_color}%} => %{${fg[cyan]}%}%r%{${reset_color}%} (y|n|a|e)? "
+
+# 右に出るプロンプト。日時を表示する。
+RPROMPT="[%D{%m/%d %H:%M}]"
+
+# pyenvの状態表示
+PROMPT+="$ZSH_PYTHON_PROMPT"
+
+# Git を使っているときにリポジトリの状態を表示する。
+# 非力なマシンだと表示に時間がかかるので、現状コメントアウト。
+autoload -Uz is-at-least
+if is-at-least 4.3.10; then
+   autoload -Uz vcs_info
+   zstyle ':vcs_info:git:*' check-for-changes true
+   zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+   zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+   zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+   zstyle ':vcs_info:*' actionformats '[%b|%a]'
+   precmd () { vcs_info }
+   RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+fi
 
 # キーバインドをviライクにする
 bindkey -v

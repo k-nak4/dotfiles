@@ -29,6 +29,13 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 ######################################
+# Plugins                            #
+######################################
+
+# pyenvの状態をプロンプトに表示する
+source ${ZDOTDIR}/plugins/zsh-python-prompt/zshrc.zsh
+
+######################################
 # user command                       #
 ######################################
 
