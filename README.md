@@ -1,4 +1,4 @@
-# setting-files
+# dotfiles
 
 ## Requirements
 * git
