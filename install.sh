@@ -3,10 +3,9 @@
 # Param
 GIT=0
 VIM=0
-NVIM=1
-ZSH=0
+NVIM=0
+ZSH=1
 TMUX=0
-KEYMAP=0
 
 # Vars
 DOT_DIR="${HOME}/dotfiles"
@@ -47,15 +46,8 @@ fi
 
 # zsh
 if [ $ZSH = 1 ]; then
-    mkdir -p ${HOME}/.zsh/plugins
-    git clone https://github.com/yonchu/zsh-python-prompt.git ${HOME}/.zsh/plugins/zsh-python-prompt
-
     ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zshenv
-    ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zsh/.zshenv
-    ln -sfv ${DOT_DIR}/zsh/.zshrc ${HOME}/.zsh/.zshrc
-    ln -sfv ${DOT_DIR}/zsh/.zsh_main ${HOME}/.zsh/.zsh_main
-    ln -sfv ${DOT_DIR}/zsh/.zsh_option ${HOME}/.zsh/.zsh_option
-    ln -sfv ${DOT_DIR}/zsh/.zsh_alias ${HOME}/.zsh/.zsh_alias
+    ln -sfv ${DOT_DIR}/zsh ${HOME}/.zsh
 else
     echo "skip: zsh"
 fi
@@ -67,11 +59,4 @@ if [ $TMUX = 1 ]; then
     git clone git://github.com/erikw/tmux-powerline.git ${HOME}/tmux-powerline
 else
     echo "skip: tmux"
-fi
-
-# keymap
-if [ $KEYMAP = 1 ]; then
-    ln -sfv ${DOT_DIR}/.Xmodmap ${HOME}/.Xmodmap
-else
-    echo "skip: keymap"
 fi
