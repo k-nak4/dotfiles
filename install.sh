@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Param
-GIT=0
+GIT=1
 VIM=0
 NVIM=0
-ZSH=1
+ZSH=0
 TMUX=0
 
 # Vars
@@ -12,7 +12,7 @@ DOT_DIR="${HOME}/dotfiles"
 
 # git
 if [ $GIT = 1 ]; then
-    ln -sfv ${HOME}/${DOT_DIR}/.gitconfig ${HOME}/.gitconfig
+    ln -sfv ${DOT_DIR}/.gitconfig ${HOME}/.gitconfig
 else
     echo "skip: git"
 fi
