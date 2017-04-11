@@ -17,6 +17,9 @@ alias sudo="sudo "
 alias listgroups="cut -d: -f1 /etc/group"
 alias src="source ${ZDOTDIR}/.zshrc"
 
+# Arch
+alias audio_setting="pavucontrol"
+
 # Keyboard 無効化 (macOS Sierra)
 alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 alias macos_keyboard_enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'

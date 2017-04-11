@@ -2,10 +2,11 @@
 
 # Param
 GIT=1
-VIM=0
+VIM=1
 NVIM=0
-ZSH=0
-TMUX=0
+ZSH=1
+TMUX=1
+XMODMAP=1
 
 # Vars
 DOT_DIR="${HOME}/dotfiles"
@@ -48,6 +49,8 @@ fi
 if [ $ZSH = 1 ]; then
     ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zshenv
     ln -sfv ${DOT_DIR}/zsh ${HOME}/.zsh
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone https://github.com/yonchu/zsh-python-prompt.git ~/.zsh/plugins/zsh-python-prompt
 else
     echo "skip: zsh"
 fi
@@ -59,4 +62,11 @@ if [ $TMUX = 1 ]; then
     git clone git://github.com/erikw/tmux-powerline.git ${HOME}/tmux-powerline
 else
     echo "skip: tmux"
+fi
+
+# xmodmap
+if [ $XMODMAP = 1 ]; then
+    ln -sfv ${DOT_DIR}/.Xmodmap ~/.Xmodmap
+else
+    echo "skip: xmodmap"
 fi
