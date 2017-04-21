@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # pythonのコンパイルに必要なものをインストール
-sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+# sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
 
 # pyenvをインストール
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
