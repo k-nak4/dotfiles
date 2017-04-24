@@ -13,8 +13,10 @@ alias ll="ls -l"
 alias la="ls -a"
 alias mv="mv -i"
 alias rm="rm -i"
-alias sudo="sudo "
 alias src="source ${ZDOTDIR}/.zshrc"
+
+# sudoを使用した時にもコマンドのシンタックスハイライトを有効にする
+alias sudo="sudo "
 
 # 便利
 alias list_group="cut -d: -f1 /etc/group"
