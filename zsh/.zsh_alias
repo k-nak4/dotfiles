@@ -13,9 +13,16 @@ alias ll="ls -l"
 alias la="ls -a"
 alias mv="mv -i"
 alias rm="rm -i"
-alias sudo="sudo "
-alias listgroups="cut -d: -f1 /etc/group"
 alias src="source ${ZDOTDIR}/.zshrc"
+
+# sudoを使用した時にもコマンドのシンタックスハイライトを有効にする
+alias sudo="sudo "
+
+# 便利
+alias list_group="cut -d: -f1 /etc/group"
+alias group_list="cut -d: -f1 /etc/group"
+alias list_user="cut -d: -f1 /etc/passwd"
+alias user_list="cut -d: -f1 /etc/passwd"
 
 # Arch
 alias audio_setting="pavucontrol"
