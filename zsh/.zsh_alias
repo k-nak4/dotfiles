@@ -26,6 +26,7 @@ alias user_list="cut -d: -f1 /etc/passwd"
 
 # Arch
 alias audio_setting="pavucontrol"
+alias img_view="feh -g 640x480 -d -S filename"
 
 # Keyboard 無効化 (macOS Sierra)
 alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
