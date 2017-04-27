@@ -17,23 +17,24 @@ fi
 # oh-my-zsh                          #
 ######################################
 
-# インストールディレクトリ
-export ZSH=${HOME}/.oh-my-zsh
-
-# テーマ
-ZSH_THEME="ys"
-
-# プラグイン
-plugins=(git zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
+if [ -d ~/.oh-my-zsh ]; then
+    # インストールディレクトリ
+    export ZSH=${HOME}/.oh-my-zsh
+    # テーマ
+    ZSH_THEME="ys"
+    # プラグイン
+    plugins=(git zsh-syntax-highlighting)
+    source $ZSH/oh-my-zsh.sh
+fi
 
 ######################################
 # Plugins                            #
 ######################################
 
 # pyenvの状態をプロンプトに表示する
-source ${ZDOTDIR}/plugins/zsh-python-prompt/zshrc.zsh
+if [ -d ${ZDOTDIR}/plugins/zsh-python-prompt ]; then
+    source ${ZDOTDIR}/plugins/zsh-python-prompt/zshrc.zsh
+fi
 
 ######################################
 # user command                       #

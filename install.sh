@@ -1,10 +1,11 @@
 #!/bin/sh
 
 # Param
-GIT=0
+GIT=1
 VIM=0
 NVIM=0
-ZSH=1
+ZSH=0
+ZPLUG=0
 TMUX=0
 XMODMAP=0
 
@@ -54,12 +55,17 @@ if [ $ZSH = 1 ]; then
     ln -sfv ${DOT_DIR}/zsh/.zsh_main ${HOME}/.zsh/.zsh_main
     ln -sfv ${DOT_DIR}/zsh/.zsh_alias ${HOME}/.zsh/.zsh_alias
     ln -sfv ${DOT_DIR}/zsh/.zsh_option ${HOME}/.zsh/.zsh_option
-
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    git clone https://github.com/yonchu/zsh-python-prompt.git ~/.zsh/plugins/zsh-python-prompt
 else
     echo "skip: zsh"
+fi
+
+# zplug
+if [ $ZPLUG = 1 ]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone https://github.com/yonchu/zsh-python-prompt.git ~/.zsh/plugins/zsh-python-prompt
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+else
+    echo "skip: zplug"
 fi
 
 # tmux
