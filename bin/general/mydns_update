@@ -1,0 +1,3 @@
+#!/bin/sh
+
+wget http://www.mydns.jp/login.html --http-user=mydns769548 --http-passwd=3JtvRjbEXtN -O /dev/null
