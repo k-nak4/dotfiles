@@ -1,0 +1,9 @@
+# Audio
+Audio mute -> XF86AudioMute
+Mic mute -> XF86AudioMicMute
+Audio up -> XF86AudioRaiseVolume
+Audio down -> XF86AudioLowerVolume
+
+# Monitor
+Brightness up -> XF86MonBrightnessUp
+Brightness down -> XF86MonBrightnessDown
