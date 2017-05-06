@@ -1,13 +1,14 @@
 #!/bin/sh
 
 # Param
-GIT=1
+GIT=0
 VIM=0
 NVIM=0
 ZSH=0
 ZPLUG=0
 TMUX=0
 XMODMAP=0
+BINS=1
 
 # Vars
 DOT_DIR="${HOME}/dotfiles"
@@ -82,4 +83,11 @@ if [ $XMODMAP = 1 ]; then
     ln -sfv ${DOT_DIR}/.Xmodmap ~/.Xmodmap
 else
     echo "skip: xmodmap"
+fi
+
+# bins
+if [ $BINS = 1 ]; then
+    ln -sfv ${DOT_DIR}/bin ${HOME}/bin
+else
+    echo "skip: bins"
 fi

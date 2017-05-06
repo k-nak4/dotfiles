@@ -1,0 +1,25 @@
+#!/bin/sh
+
+case "$1" in
+    "XF86AudioMute")
+        MUTE=`amixer -c 0 get Master|tail -1|cut -d '[' -f 4|sed s/\]//`
+        if [ $MUTE = "on" ]; then
+            amixer -q -c 0 set Master mute
+            echo -e "Mute!"
+            notify-send -u low -t 1000 mute "X"
+        else
+            amixer -q -c 0 set Master unmute
+            amixer -q -c 0 set Speaker unmute
+            echo -e "Unmute!"
+            amixer -c 0 get Master | tail -1 | cut -d '[' -f 2 | sed s/\]// | xargs notify-send -u low -t 500 unmute
+        fi
+    ;;
+    "XF86AudioRaiseVolume")
+        amixer -c 0 set Master 2dB+ | tail -1 | cut -d '[' -f 2 | sed s/\]// | xargs notify-send -u low -t 1000 vol
+    ;;
+    "XF86AudioLowerVolume")
+        amixer -c 0 set Master 2dB- | tail -1 | cut -d '[' -f 2 | sed s/\]// | xargs notify-send -u low -t 1000 vol
+    ;;
+esac
+
+amixer -c 0 get Master | tail -1 | cut -d '[' -f 2 | sed s/\]//
