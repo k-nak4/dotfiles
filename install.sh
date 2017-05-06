@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # Param
-GIT=0
-VIM=0
+GIT=1
+VIM=1
 NVIM=0
-ZSH=0
-ZPLUG=0
+ZSH=1
+ZPLUG=1
 TMUX=0
 XMODMAP=0
 BINS=1

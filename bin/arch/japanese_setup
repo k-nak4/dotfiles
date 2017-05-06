@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# sudo pacman -S otf-ipafont
+# sudo pacman -S fcitx-mozc fcitx-configtool fcitx-gtk2 fcitx-gtk3
+
+echo "export GTK_IM_MODULE=fcitx" >> ${HOME}/.xprofile
+echo "export QT_IM_MODULE=fcitx" >> ${HOME}/.xprofile
+echo 'export XMODIFIERS="@im=fcitx"' >> ${HOME}/.xprofile
