@@ -1,14 +1,18 @@
 #!/bin/sh
 
+# increment: Ctrl + a
+# decrement: Ctrl + x
+
 # Param
-GIT=1
-VIM=1
+GIT=0
+VIM=0
 NVIM=0
-ZSH=1
-ZPLUG=1
+ZSH=0
+FISH=0
+ZPLUG=0
 TMUX=0
 XMODMAP=0
-BINS=1
+BINS=0
 
 # Vars
 DOT_DIR="${HOME}/dotfiles"
@@ -67,6 +71,13 @@ if [ $ZPLUG = 1 ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 else
     echo "skip: zplug"
+fi
+
+# fish
+if [ $FISH = 1 ]; then
+    curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+else
+    echo "skip: fish"
 fi
 
 # tmux
