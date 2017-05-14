@@ -61,6 +61,7 @@ set laststatus=2
 set wildmenu
 set hidden
 set backspace=indent,eol,start
+set cursorline
 highlight Normal ctermbg=none
 
 " 折り返しに関する設定
@@ -179,23 +180,9 @@ let g:syntastic_cpp_compiler_options="-std=c++14"
 
 " ################################################################################
 
-" Go言語
-
-" vim-go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-
-if $GOPATH != ''
-    execute "set rtp+=".globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
-    let g:syntastic_go_checkers = ['go', 'golint', 'govet']
-endif
-
-" ################################################################################
-
 set t_Co=256
-set background=dark
-colorscheme lucius
+set background=light
+colorscheme pencil
 filetype plugin indent on
 syntax on
 

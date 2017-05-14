@@ -26,14 +26,11 @@ repo = 'Shougo/vimproc'
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
-# カッコやクォートを自動補完
-[[plugins]]
-repo = 'MetalPhaeton/easybracket-vim'
-
-# Go言語プラグイン
-[[plugins]]
-repo = 'fatih/vim-go'
-
 # markdown
 [[plugins]]
 repo = 'tpope/vim-markdown'
+
+# toml
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'

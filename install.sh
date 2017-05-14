@@ -3,7 +3,7 @@
 # increment: Ctrl + a
 # decrement: Ctrl + x
 
-# Param
+# Install=1, Don't install=0
 GIT=0
 VIM=0
 NVIM=0
@@ -32,12 +32,8 @@ if [ $VIM = 1 ]; then
     ln -sfv ${DOT_DIR}/vim/.vimrc ${HOME}/.vimrc
     ln -sfv ${DOT_DIR}/vim/dein.toml ${HOME}/.vim/rc/dein.toml
     ln -sfv ${DOT_DIR}/vim/dein_lazy.toml ${HOME}/.vim/rc/dein_lazy.toml
-
-    if [ -e ${HOME}/.vim/colors/lucius.vim ]; then
-        echo "skip : lucius.vim is already installed."
-    else
-        wget https://github.com/jonathanfilip/vim-lucius/raw/master/colors/lucius.vim -P ${HOME}/.vim/colors
-    fi
+    wget https://github.com/reedes/vim-colors-pencil/raw/master/colors/pencil.vim -P ${HOME}/.vim/colors
+    wget https://github.com/jonathanfilip/vim-lucius/raw/master/colors/lucius.vim -P ${HOME}/.vim/colors
 else
     echo "skip: vim"
 fi
