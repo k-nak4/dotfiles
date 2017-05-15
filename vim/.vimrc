@@ -180,7 +180,9 @@ let g:syntastic_cpp_compiler_options="-std=c++14"
 
 " ################################################################################
 
-inoremap <expr><C-i> neocomplete#complete_common_string()
+" markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Firefox'
 
 " ################################################################################
 

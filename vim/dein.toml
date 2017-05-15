@@ -30,6 +30,14 @@ repo = 'nathanaelkane/vim-indent-guides'
 [[plugins]]
 repo = 'tpope/vim-markdown'
 
+# preview
+[[plugins]]
+repo = 'kannokanno/previm'
+
+# open-browser
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
 # toml
 [[plugins]]
 repo = 'cespare/vim-toml'
