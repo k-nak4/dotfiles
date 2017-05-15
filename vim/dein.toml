@@ -34,3 +34,7 @@ repo = 'tpope/vim-markdown'
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+
+# neocomplete
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'

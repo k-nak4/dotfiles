@@ -180,6 +180,10 @@ let g:syntastic_cpp_compiler_options="-std=c++14"
 
 " ################################################################################
 
+inoremap <expr><C-i> neocomplete#complete_common_string()
+
+" ################################################################################
+
 set t_Co=256
 set background=light
 colorscheme pencil
