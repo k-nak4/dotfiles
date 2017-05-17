@@ -21,7 +21,7 @@ if [ -d ~/.oh-my-zsh ]; then
     # インストールディレクトリ
     export ZSH=${HOME}/.oh-my-zsh
     # テーマ
-    ZSH_THEME="ys"
+    ZSH_THEME="agnoster"
     # プラグイン
     plugins=(git zsh-syntax-highlighting)
     source $ZSH/oh-my-zsh.sh
