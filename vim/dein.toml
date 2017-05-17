@@ -22,10 +22,6 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'Shougo/vimproc'
 
-# インデントガイドを表示
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-
 # markdown
 [[plugins]]
 repo = 'tpope/vim-markdown'
@@ -42,7 +38,3 @@ repo = 'tyru/open-browser.vim'
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
-
-# neocomplete
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'

@@ -49,9 +49,9 @@ set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smartcase
 set hlsearch
 set autoindent
@@ -161,15 +161,6 @@ endfunction
 function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
-
-" ################################################################################
-
-" vim-indent-guides
-let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=grey
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=darkgrey
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size=1
 
 " ################################################################################
 
