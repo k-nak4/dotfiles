@@ -45,6 +45,12 @@ $ echo "general user"
 % yum update
 ```
 
+### hostnameを変更
+
+```
+% hostnamectl set-hostname <host_name>
+```
+
 ### 一般ユーザを作成する
 
 ```
@@ -159,6 +165,22 @@ $ sudo firewall-cmd --reload
 [client]$ ssh -i ~/.ssh/id_ed25519 -p <Port番号> <user_name>@<xxx.xxx.xxx.xxx>
 ```
 
+### クライアント側の~/.ssh/configの設定(任意)
+```
+ServerAliveInterval 60
+
+Host <host_name>
+  HostName <xxx.xxx.xxx.xxx>
+  User <user_name>
+  Port <Port番号>
+  IdentityFile ~/.ssh/<秘密鍵>
+```
+
+上記のように設定するとsshをする際に記述する文字数が少なくて済む。
+```
+$ ssh <host_name>
+```
+
 <br>
 
 ## Webサーバのインストール
@@ -175,7 +197,7 @@ $ sudo useradd --shell /sbin/nologin nginx
 
 ### Nginxをダウンロード
 [公式サイト](http://nginx.org/en/download.html)からソースをダウンロード。今回はStable versionから選択。
-``
+```
 $ wget http://nginx.org/download/nginx-1.12.0.tar.gz
 $ tar xvzf nginx-1.12.0.tar.gz
 ```
