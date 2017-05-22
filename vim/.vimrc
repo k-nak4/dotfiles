@@ -49,9 +49,9 @@ set number
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set smartcase
 set hlsearch
 set autoindent
@@ -94,6 +94,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " w!!でスーパーユーザーとして保存
 cmap w!! w !sudo tee > /dev/null %
+
+" ################################################################################
+
+" ファイルタイプ設定
+augroup fileTypeIndent
+  autocmd!
+  autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 " ################################################################################
 
