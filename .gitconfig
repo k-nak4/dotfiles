@@ -5,3 +5,5 @@
 	editor = vim
 [ghq]
 	root = /home/k-naka/dev/src
+[color]
+	ui = auto
