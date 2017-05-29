@@ -186,7 +186,7 @@ let g:previm_open_cmd = 'open -a Firefox'
 " ################################################################################
 
 set t_Co=256
-set background=light
+set background=dark
 colorscheme pencil
 filetype plugin indent on
 syntax on

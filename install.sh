@@ -1,21 +1,17 @@
 #!/bin/sh
 
-# increment: Ctrl + a
-# decrement: Ctrl + x
-
-# Install=1, Don't install=0
+# 1 = Install
+# 0 = Don't install
 GIT=0
 VIM=0
-NVIM=0
 ZSH=0
-ZPLUG=0
-FISH=0
 TMUX=0
-XMODMAP=0
-BINS=0
+DOC=0
 
-# Vars
+# path
 DOT_DIR="${HOME}/dotfiles"
+
+# ---------------------------------------------------------------------------
 
 # git
 if [ $GIT = 1 ]; then
@@ -33,23 +29,12 @@ if [ $VIM = 1 ]; then
     ln -sfv ${DOT_DIR}/vim/dein.toml ${HOME}/.vim/rc/dein.toml
     ln -sfv ${DOT_DIR}/vim/dein_lazy.toml ${HOME}/.vim/rc/dein_lazy.toml
     wget https://github.com/reedes/vim-colors-pencil/raw/master/colors/pencil.vim -P ${HOME}/.vim/colors
-    wget https://github.com/jonathanfilip/vim-lucius/raw/master/colors/lucius.vim -P ${HOME}/.vim/colors
 else
     echo "skip: vim"
 fi
 
-# neovim
-if [ $NVIM = 1 ]; then
-    mkdir -p ${HOME}/.config
-    ln -sfv ${HOME}/.vim ${HOME}/.config/nvim
-    ln -sfv ${DOT_DIR}/vim/.vimrc ${HOME}/.config/nvim/init.vim
-else
-    echo "skip: neovim"
-fi
-
 # zsh
 if [ $ZSH = 1 ]; then
-    mkdir -p ${HOME}/.zsh/plugins
     ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zshenv
     ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zsh/.zshenv
     ln -sfv ${DOT_DIR}/zsh/.zshrc ${HOME}/.zsh/.zshrc
@@ -60,41 +45,16 @@ else
     echo "skip: zsh"
 fi
 
-# zplug
-if [ $ZPLUG = 1 ]; then
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    git clone https://github.com/yonchu/zsh-python-prompt.git ~/.zsh/plugins/zsh-python-prompt
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-else
-    echo "skip: zplug"
-fi
-
-# fish
-if [ $FISH = 1 ]; then
-    curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-else
-    echo "skip: fish"
-fi
-
 # tmux
 if [ $TMUX = 1 ]; then
     ln -sfv ${DOT_DIR}/tmux/.tmux.conf ${HOME}/.tmux.conf
-    ln -sfv ${DOT_DIR}/tmux/.tmux-powerlinerc ${HOME}/.tmux-powerlinerc
-    git clone git://github.com/erikw/tmux-powerline.git ${HOME}/tmux-powerline
 else
     echo "skip: tmux"
 fi
 
-# xmodmap
-if [ $XMODMAP = 1 ]; then
-    ln -sfv ${DOT_DIR}/.Xmodmap ~/.Xmodmap
+# documents
+if [ $DOC = 1 ]; then
+    ln -sfv ${DOT_DIR}/doc ${HOME}/doc
 else
-    echo "skip: xmodmap"
-fi
-
-# bins
-if [ $BINS = 1 ]; then
-    ln -sfv ${DOT_DIR}/bin ${HOME}/bin
-else
-    echo "skip: bins"
+    echo "skip: doc"
 fi

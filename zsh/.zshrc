@@ -13,32 +13,8 @@ if [ -f ${ZDOTDIR}/.zsh_alias ]; then
     source ${ZDOTDIR}/.zsh_alias
 fi
 
-######################################
-# oh-my-zsh                          #
-######################################
 
-if [ -d ~/.oh-my-zsh ]; then
-    # インストールディレクトリ
-    export ZSH=${HOME}/.oh-my-zsh
-    # テーマ
-    ZSH_THEME="wedisagree"
-    # プラグイン
-    plugins=(git zsh-syntax-highlighting)
-    source $ZSH/oh-my-zsh.sh
-fi
-
-######################################
-# Plugins                            #
-######################################
-
-# pyenvの状態をプロンプトに表示する
-if [ -d ${ZDOTDIR}/plugins/zsh-python-prompt ]; then
-    source ${ZDOTDIR}/plugins/zsh-python-prompt/zshrc.zsh
-fi
-
-######################################
-# user command                       #
-######################################
+# ------------- user command ---------------
 
 # Peco
 bindkey '^]' peco-src
