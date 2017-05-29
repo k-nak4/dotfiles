@@ -1,5 +1,3 @@
-" ################################################################################
-
 " pluginがインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim
@@ -36,26 +34,18 @@ if dein#check_install()
   call dein#install()
 endif
 
-" ################################################################################
+" #####################################################################
 
 " 一時的にファイルタイプを無効化
 filetype off
 filetype plugin indent off
 
-" ################################################################################
+" #####################################################################
 
 " 基本設定
 set number
-set expandtab
-set encoding=utf-8
-set fileencoding=utf-8
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 set smartcase
 set hlsearch
-set autoindent
-set smartindent
 set showcmd
 set laststatus=2
 set wildmenu
@@ -63,6 +53,25 @@ set hidden
 set backspace=indent,eol,start
 set cursorline
 highlight Normal ctermbg=none
+
+" 文字コード
+set encoding=utf-8
+set fileencoding=utf-8
+
+" 基本インデント
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+
+" ファイルタイプ・インデント
+augroup fileTypeIndent
+  autocmd!
+  autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 " 折り返しに関する設定
 set wrap
@@ -76,7 +85,7 @@ if has('persistent_undo')
   set undofile
 endif
 
-" ################################################################################
+" #####################################################################
 
 " キーバインド
 " ESCを2回押した時にハイライトを消す
@@ -95,15 +104,7 @@ nnoremap <C-l> <C-w>l
 " w!!でスーパーユーザーとして保存
 cmap w!! w !sudo tee > /dev/null %
 
-" ################################################################################
-
-" ファイルタイプ設定
-augroup fileTypeIndent
-  autocmd!
-  autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
-
-" ################################################################################
+" #####################################################################
 
 " lightline
 let g:lightline = {
@@ -170,25 +171,23 @@ function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-" ################################################################################
+" #####################################################################
 
 " Syntastic
 let g:syntastic_check_on_wq=0
 let g:syntastic_cpp_compiler="g++"
 let g:syntastic_cpp_compiler_options="-std=c++14"
 
-" ################################################################################
+" #####################################################################
 
 " markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a Firefox'
 
-" ################################################################################
+" #####################################################################
 
 set t_Co=256
 set background=dark
 colorscheme pencil
 filetype plugin indent on
 syntax on
-
-" ################################################################################
