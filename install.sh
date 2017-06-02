@@ -35,6 +35,7 @@ fi
 
 # zsh
 if [ $ZSH = 1 ]; then
+    mkdir -p ${HOME}/.zsh
     ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zshenv
     ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zsh/.zshenv
     ln -sfv ${DOT_DIR}/zsh/.zshrc ${HOME}/.zsh/.zshrc
