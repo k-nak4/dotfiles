@@ -6,7 +6,7 @@ GIT=0
 VIM=0
 ZSH=0
 TMUX=0
-DOC=0
+DOCS=0
 
 # path
 DOT_DIR="${HOME}/dotfiles"
@@ -54,8 +54,8 @@ else
 fi
 
 # documents
-if [ $DOC = 1 ]; then
-    ln -sfv ${DOT_DIR}/doc ${HOME}/doc
+if [ $DOCS = 1 ]; then
+    ln -sfv ${DOT_DIR}/docs ${HOME}/docs
 else
     echo "skip: doc"
 fi

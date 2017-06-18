@@ -1,0 +1,3 @@
+PATHの管理
+$HOME/.zprofile
+/etc/paths.d/NUM-HOGE
