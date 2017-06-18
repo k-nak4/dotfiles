@@ -1,1 +1,0 @@
-sudo arp-scan -l --interface <interface_name>
