@@ -33,4 +33,4 @@ alias macos_keyboard_disable='sudo kextunload /System/Library/Extensions/AppleUS
 alias macos_keyboard_enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 
 # 競技プログラミング用
-alias gpp='g++ -std="c++14"'
+alias gpp='g++ -std=c++14 -Wall -O2 -g -fsanitize=undefined -D_GLIBCXX_DEBUG'
