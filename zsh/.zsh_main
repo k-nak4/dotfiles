@@ -43,7 +43,7 @@ export PATH LD_LIBRARY_PATH LD_LIBRARY_PATH_64
 export KERNEL_NAME="`uname -s`"
 
 # Language
-export LANGUAGE="en_US.UTF-8"
+export LANGUAGE="ja_JP.UTF-8"
 export LANG="${LANGUAGE}"
 export LC_ALL="${LANGUAGE}"
 export LC_CTYPE="${LANGUAGE}"
