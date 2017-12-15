@@ -7,6 +7,7 @@ VIM=0
 ZSH=0
 TMUX=0
 DOCS=0
+SCREEN=0
 
 # path
 DOT_DIR="${HOME}/dotfiles"
@@ -58,4 +59,11 @@ if [ $DOCS = 1 ]; then
     ln -sfv ${DOT_DIR}/docs ${HOME}/docs
 else
     echo "skip: doc"
+fi
+
+# screen
+if [ $SCREEN = 1 ]; then
+    ln -sfv ${DOT_DIR}/.screenrc ${HOME}/.screenrc
+else
+    echo "skip: screen"
 fi

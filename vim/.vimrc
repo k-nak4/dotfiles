@@ -69,6 +69,7 @@ set smartindent
 " ファイルタイプ・インデント
 augroup fileTypeIndent
   autocmd!
+  " C/C++は2tab
   autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
@@ -77,6 +78,7 @@ augroup END
 set wrap
 set linebreak
 set showbreak=+\ 
+" Vim8以降
 set breakindent
 
 " 永続undo
@@ -187,7 +189,7 @@ let g:previm_open_cmd = 'open -a Firefox'
 " #####################################################################
 
 set t_Co=256
-set background=light
+set background=dark
 colorscheme pencil
 filetype plugin indent on
 syntax on

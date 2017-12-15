@@ -1,0 +1,29 @@
+# 文字エンコード
+defutf8 on
+encoding utf-8 utf-8
+defencoding utf-8
+defkanji utf-8
+
+# shell
+shell /usr/local/bin/fish
+
+# いらない機能を停止
+startup_message off
+vbell off
+
+# Prefix
+escape ^Tt
+
+# スクロール
+defscrollback 10000
+termcapinfo xterm* ti@:te@
+
+# vimとかのバッファをクリアする
+altscreen on
+
+# 256対応
+defbce on
+term xterm-256color
+
+# Status bar
+hardstatus alwayslastline "%{= cd} %-w%{= dd} %n %t* %{-}%+w %= LoadAVG [%l] "
