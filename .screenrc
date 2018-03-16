@@ -5,7 +5,7 @@ defencoding utf-8
 defkanji utf-8
 
 # shell
-shell /usr/local/bin/fish
+shell /usr/bin/zsh
 
 # いらない機能を停止
 startup_message off
