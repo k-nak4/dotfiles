@@ -4,10 +4,11 @@
 # 0 = Don't install
 GIT=0
 VIM=0
+SCREEN=0
+BASH=0
 ZSH=0
 TMUX=0
 DOCS=0
-SCREEN=0
 
 # path
 DOT_DIR="${HOME}/dotfiles"
@@ -32,6 +33,13 @@ if [ $VIM = 1 ]; then
     wget https://github.com/reedes/vim-colors-pencil/raw/master/colors/pencil.vim -P ${HOME}/.vim/colors
 else
     echo "skip: vim"
+fi
+
+# bash
+if [ $BASH = 1 ]; then
+    ln -sfv ${DOT_DIR}/bash/.bashrc ${HOME}/.bashrc
+else
+    echo "skip: bash"
 fi
 
 # zsh

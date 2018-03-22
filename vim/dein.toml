@@ -2,6 +2,18 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# ステータスバー装飾
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# 構文解析
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+# 非同期処理を可能にする
+[[plugins]]
+repo = 'Shougo/vimproc'
+
 # 行末のホワイトスペース可視化
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -9,32 +21,3 @@ repo = 'bronson/vim-trailing-whitespace'
 # エディタ上でカラー確認
 [[plugins]]
 repo = 'gko/vim-coloresque'
-
-# 構文解析
-[[plugins]]
-repo = 'scrooloose/syntastic'
-
-# ステータスバー装飾
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-
-# 非同期処理を可能にする
-[[plugins]]
-repo = 'Shougo/vimproc'
-
-# markdown
-[[plugins]]
-repo = 'tpope/vim-markdown'
-
-# preview
-[[plugins]]
-repo = 'kannokanno/previm'
-
-# open-browser
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-
-# toml
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'

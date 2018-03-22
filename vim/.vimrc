@@ -69,7 +69,7 @@ set smartindent
 " ファイルタイプ・インデント
 augroup fileTypeIndent
   autocmd!
-  " C/C++は2tab
+  " C/C++ 2-tab
   autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
