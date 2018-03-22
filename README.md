@@ -2,6 +2,7 @@
 
 ## Requirements
 * git
+* wget
 
 ## Install
 1. Clone this repository.

@@ -72,6 +72,8 @@ augroup fileTypeIndent
   " C/C++ 2-tab
   autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " Golang 2 soft-tab
+  autocmd BufNewFile,BufRead *.go setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 " 折り返しに関する設定
@@ -79,7 +81,7 @@ set wrap
 set linebreak
 set showbreak=+\ 
 " Vim8以降
-set breakindent
+" set breakindent
 
 " 永続undo
 if has('persistent_undo')
