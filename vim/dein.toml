@@ -7,8 +7,14 @@ repo = 'Shougo/dein.vim'
 repo = 'itchyny/lightline.vim'
 
 # 構文解析
+# [[plugins]]
+# repo = 'scrooloose/syntastic'
 [[plugins]]
-repo = 'scrooloose/syntastic'
+repo = 'w0rp/ale'
+
+# quickrun
+[[plugins]]
+repo = 'thinca/vim-quickrun'
 
 # 非同期処理を可能にする
 [[plugins]]

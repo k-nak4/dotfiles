@@ -52,11 +52,16 @@ set wildmenu
 set hidden
 set backspace=indent,eol,start
 set cursorline
-highlight Normal ctermbg=none
+set textwidth=80
+set colorcolumn=80
+" highlight Normal ctermbg=none
 
 " 文字コード
 set encoding=utf-8
 set fileencoding=utf-8
+
+" クリップボード
+set clipboard+=unnamed
 
 " 基本インデント
 set expandtab
@@ -69,25 +74,29 @@ set smartindent
 " ファイルタイプ・インデント
 augroup fileTypeIndent
   autocmd!
-  " C/C++ 2-tab
+
+  " C/C++
   autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  " Golang 2 soft-tab
+
+  " Golang
   autocmd BufNewFile,BufRead *.go setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
 augroup END
 
 " 折り返しに関する設定
 set wrap
 set linebreak
-set showbreak=+\ 
+" set showbreak=+\ 
 " Vim8以降
-" set breakindent
+set breakindent
 
 " 永続undo
 if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
+
 
 " #####################################################################
 
@@ -107,6 +116,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " w!!でスーパーユーザーとして保存
 cmap w!! w !sudo tee > /dev/null %
+" <C-e>でスクリプト実行
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
+autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby%
 
 " #####################################################################
 
@@ -177,21 +189,45 @@ endfunction
 
 " #####################################################################
 
+" aleに移行したためコメントアウト
 " Syntastic
-let g:syntastic_check_on_wq=0
-let g:syntastic_cpp_compiler="g++"
-let g:syntastic_cpp_compiler_options="-std=c++14"
+" let g:syntastic_check_on_wq=0
+" let g:syntastic_cpp_compiler="g++"
+" let g:syntastic_cpp_compiler_options="-std=c++14"
+
+" #####################################################################
+
+" ale
+" 保存時のみ実行
+let g:ale_lint_on_text_changed = 0
+" Lintツールの指定
+let g:ale_linters = {
+\ 'python': ['pyflakes', 'pep8'],
+\}
+" 表示設定
+" let g:ale_sign_error = 'X'
+" let g:ale_sign_warning = '!'
+let g:airline#extensions#ale#open_lnum_symbol = '('
+let g:airline#extensions#ale#close_lnum_symbol = ')'
+let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+highlight link ALEErrorSign Tag
+highlight link ALEWarningSign StorageClass
+
+" #####################################################################
+
+" jedi-vim docstringがポップアップされるのを無効化
+autocmd FileType python setlocal completeopt-=preview
 
 " #####################################################################
 
 " markdown
-au BufRead,BufNewFile *.md set filetype=markdown
-let g:previm_open_cmd = 'open -a Firefox'
+" au BufRead,BufNewFile *.md set filetype=markdown
+" let g:previm_open_cmd = 'open -a Firefox'
 
 " #####################################################################
 
 set t_Co=256
-set background=dark
+set background=light
 colorscheme pencil
 filetype plugin indent on
 syntax on
