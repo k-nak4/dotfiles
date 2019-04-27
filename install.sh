@@ -44,13 +44,7 @@ fi
 
 # zsh
 if [ $ZSH = 1 ]; then
-    mkdir -p ${HOME}/.zsh
-    ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zshenv
-    ln -sfv ${DOT_DIR}/zsh/.zshenv ${HOME}/.zsh/.zshenv
-    ln -sfv ${DOT_DIR}/zsh/.zshrc ${HOME}/.zsh/.zshrc
-    ln -sfv ${DOT_DIR}/zsh/.zsh_main ${HOME}/.zsh/.zsh_main
-    ln -sfv ${DOT_DIR}/zsh/.zsh_alias ${HOME}/.zsh/.zsh_alias
-    ln -sfv ${DOT_DIR}/zsh/.zsh_option ${HOME}/.zsh/.zsh_option
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 else
     echo "skip: zsh"
 fi
