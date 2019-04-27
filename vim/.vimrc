@@ -54,6 +54,7 @@ set backspace=indent,eol,start
 set cursorline
 set textwidth=80
 set colorcolumn=80
+set formatoptions=q
 " highlight Normal ctermbg=none
 
 " 文字コード
@@ -227,7 +228,7 @@ autocmd FileType python setlocal completeopt-=preview
 " #####################################################################
 
 set t_Co=256
-set background=light
+set background=dark
 colorscheme pencil
 filetype plugin indent on
 syntax on
