@@ -5,7 +5,7 @@ defencoding utf-8
 defkanji utf-8
 
 # shell
-shell /bin/bash
+shell /usr/bin/zsh
 
 # いらない機能を停止
 startup_message off
