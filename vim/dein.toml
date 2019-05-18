@@ -13,7 +13,3 @@ repo = 'Shougo/vimproc'
 # 行末のホワイトスペース可視化
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
-
-# エディタ上でカラー確認
-[[plugins]]
-repo = 'gko/vim-coloresque'

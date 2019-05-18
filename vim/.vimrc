@@ -188,45 +188,7 @@ function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-" #####################################################################
-
-" aleに移行したためコメントアウト
-" Syntastic
-" let g:syntastic_check_on_wq=0
-" let g:syntastic_cpp_compiler="g++"
-" let g:syntastic_cpp_compiler_options="-std=c++14"
-
-" #####################################################################
-
-" ale
-" 保存時のみ実行
-let g:ale_lint_on_text_changed = 0
-" Lintツールの指定
-let g:ale_linters = {
-\ 'python': ['pyflakes', 'pep8'],
-\}
-" 表示設定
-" let g:ale_sign_error = 'X'
-" let g:ale_sign_warning = '!'
-let g:airline#extensions#ale#open_lnum_symbol = '('
-let g:airline#extensions#ale#close_lnum_symbol = ')'
-let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-highlight link ALEErrorSign Tag
-highlight link ALEWarningSign StorageClass
-
-" #####################################################################
-
-" jedi-vim docstringがポップアップされるのを無効化
-autocmd FileType python setlocal completeopt-=preview
-
-" #####################################################################
-
-" markdown
-" au BufRead,BufNewFile *.md set filetype=markdown
-" let g:previm_open_cmd = 'open -a Firefox'
-
-" #####################################################################
-
+" General
 set t_Co=256
 set background=dark
 colorscheme pencil

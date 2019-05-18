@@ -2,7 +2,3 @@
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
-
-[[plugins]]
-repo = "davidhalter/jedi-vim"
-on_ft = ['python']

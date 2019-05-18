@@ -2,13 +2,10 @@
 
 # 1 = Install
 # 0 = Don't install
-GIT=0
-VIM=0
-SCREEN=0
-BASH=0
-ZSH=0
-TMUX=0
-DOCS=0
+GIT=1
+VIM=1
+SCREEN=1
+ZSH=1
 
 # path
 DOT_DIR="${HOME}/dotfiles"
@@ -35,32 +32,11 @@ else
     echo "skip: vim"
 fi
 
-# bash
-if [ $BASH = 1 ]; then
-    ln -sfv ${DOT_DIR}/bash/.bashrc ${HOME}/.bashrc
-else
-    echo "skip: bash"
-fi
-
 # zsh
 if [ $ZSH = 1 ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 else
     echo "skip: zsh"
-fi
-
-# tmux
-if [ $TMUX = 1 ]; then
-    ln -sfv ${DOT_DIR}/tmux/.tmux.conf ${HOME}/.tmux.conf
-else
-    echo "skip: tmux"
-fi
-
-# documents
-if [ $DOCS = 1 ]; then
-    ln -sfv ${DOT_DIR}/docs ${HOME}/docs
-else
-    echo "skip: doc"
 fi
 
 # screen
