@@ -13,3 +13,15 @@ repo = 'Shougo/vimproc'
 # 行末のホワイトスペース可視化
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+
+# javascript
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+# auto close
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+# ALE
+[[plugins]]
+repo = 'w0rp/ale'

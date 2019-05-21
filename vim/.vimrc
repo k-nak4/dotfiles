@@ -100,8 +100,9 @@ endif
 
 
 " #####################################################################
+" Key bind
+" #####################################################################
 
-" キーバインド
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " 検索後のジャンプ位置変更
@@ -121,9 +122,10 @@ cmap w!! w !sudo tee > /dev/null %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby%
 
-" #####################################################################
 
-" lightline
+" #####################################################################
+" Lightline
+" #####################################################################
 let g:lightline = {
 \   'colorscheme': 'wombat',
 \   'mode_map': {'c': 'NORMAL'},
@@ -188,7 +190,23 @@ function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+
+" #####################################################################
+" ALE
+" #####################################################################
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+
+" #####################################################################
 " General
+" #####################################################################
 set t_Co=256
 set background=dark
 colorscheme pencil
