@@ -76,12 +76,21 @@ set smartindent
 augroup fileTypeIndent
   autocmd!
 
+  " .vimrc
+  autocmd BufNewFile,BufRead .vimrc setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+  " HTML
+  autocmd BufNewFile,BufRead *.html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
   " C/C++
   autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
   " Golang
   autocmd BufNewFile,BufRead *.go setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+  " Python
+  autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 augroup END
 
@@ -121,6 +130,8 @@ cmap w!! w !sudo tee > /dev/null %
 " <C-e>でスクリプト実行
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby%
+" NERDTree
+nnoremap <silent><C-t> :NERDTreeToggle<CR>
 
 
 " #####################################################################
@@ -209,28 +220,28 @@ let g:ale_fix_on_save = 1
 
 " Linterの指定
 let g:ale_linters = {
-\   'python': ['flake8'],
-\   'javascript': ['eslint'],
+\  'python': ['flake8'],
+\  'javascript': ['eslint'],
 \}
 
 " Fixerの指定
 let g:ale_fixers = {
-\   'python': ['autopep8'],
-\   'javascript': ['eslint'],
+\  'python': ['autopep8'],
+\  'javascript': ['eslint'],
 \}
 
 " #####################################################################
 " Jedi
 " #####################################################################
-
+autocmd FileType python setlocal completeopt-=preview
 
 " #####################################################################
 " Git gutter
 " #####################################################################
 if exists('&signcolumn')
-    set signcolumn=yes
+  set signcolumn=yes
 else
-    let g:gitgutter_sign_column_always = 1
+  let g:gitgutter_sign_column_always = 1
 endif
 
 " #####################################################################

@@ -29,3 +29,15 @@ repo = 'w0rp/ale'
 # gitgutter
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+# ウィンドウサイズ変更プラグイン
+[[plugins]]
+repo = 'simeji/winresizer'
+
+# NERDTree
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# Emmet
+[[plugins]]
+repo = 'mattn/emmet-vim'
