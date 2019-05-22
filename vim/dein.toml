@@ -25,3 +25,7 @@ repo = 'Townk/vim-autoclose'
 # ALE
 [[plugins]]
 repo = 'w0rp/ale'
+
+# gitgutter
+[[plugins]]
+repo = 'airblade/vim-gitgutter'

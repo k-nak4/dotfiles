@@ -194,15 +194,39 @@ endfunction
 " #####################################################################
 " ALE
 " #####################################################################
+let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-let g:ale_fixers = {
+" テキスト変更時
+let g:ale_lint_on_text_changed = 'never'
+
+" ファイル保存時
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
+" Linterの指定
+let g:ale_linters = {
+\   'python': ['flake8'],
 \   'javascript': ['eslint'],
 \}
-let g:ale_fix_on_save = 1
+
+" Fixerの指定
+let g:ale_fixers = {
+\   'python': ['autopep8'],
+\   'javascript': ['eslint'],
+\}
+
+" #####################################################################
+" Git gutter
+" #####################################################################
+if exists('&signcolumn')
+    set signcolumn=yes
+else
+    let g:gitgutter_sign_column_always = 1
+endif
 
 " #####################################################################
 " General
