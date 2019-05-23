@@ -41,3 +41,7 @@ repo = 'scrooloose/nerdtree'
 # Emmet
 [[plugins]]
 repo = 'mattn/emmet-vim'
+
+# 背景透過
+[[plugins]]
+repo = 'miyakogi/seiya.vim'
