@@ -34,10 +34,6 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'simeji/winresizer'
 
-# NERDTree
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
 # Emmet
 [[plugins]]
 repo = 'mattn/emmet-vim'

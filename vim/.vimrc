@@ -75,23 +75,19 @@ set smartindent
 " ファイルタイプ・インデント
 augroup fileTypeIndent
   autocmd!
-
   " .vimrc
   autocmd BufNewFile,BufRead .vimrc setlocal tabstop=2 softtabstop=2 shiftwidth=2
-
   " HTML
   autocmd BufNewFile,BufRead *.html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-
+  " PHP
+  autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
   " C/C++
   autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
-
   " Golang
   autocmd BufNewFile,BufRead *.go setlocal tabstop=2 softtabstop=2 shiftwidth=2
-
   " Python
   autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
-
 augroup END
 
 " 折り返しに関する設定
@@ -131,12 +127,24 @@ cmap w!! w !sudo tee > /dev/null %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby%
 " NERDTree
-nnoremap <silent><C-t> :NERDTreeToggle<CR>
-
+nnoremap <silent><C-m> :Ex<CR>
 
 " #####################################################################
-" Lightline
+" Built-in plugin
 " #####################################################################
+
+" netrw - ファイラ
+let g:netrw_liststyle=1
+let g:netrw_banner=0
+let g:netrw_sizestyle="H"
+let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
+let g:netrw_preview=1
+
+" #####################################################################
+" Plugin
+" #####################################################################
+
+" Lightline - ステータスバー装飾
 let g:lightline = {
 \   'colorscheme': 'wombat',
 \   'mode_map': {'c': 'NORMAL'},
@@ -201,53 +209,45 @@ function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-
-" #####################################################################
-" ALE
-" #####################################################################
+" ALE - Async Linter
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-" テキスト変更時
 let g:ale_lint_on_text_changed = 'never'
-
-" ファイル保存時
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
-" Linterの指定
 let g:ale_linters = {
 \  'python': ['flake8'],
 \  'javascript': ['eslint'],
 \}
 
-" Fixerの指定
 let g:ale_fixers = {
 \  'python': ['autopep8'],
 \  'javascript': ['eslint'],
 \}
 
-" #####################################################################
-" Jedi
-" #####################################################################
+" Jedi - Python all-in plugin
 autocmd FileType python setlocal completeopt-=preview
 
-" #####################################################################
-" Seiya
-" #####################################################################
+" Seiya - Background transparent
 let g:seiya_auto_enable=1
 
-" #####################################################################
-" Git gutter
-" #####################################################################
+" Git gutter - git diff
 if exists('&signcolumn')
   set signcolumn=yes
 else
   let g:gitgutter_sign_column_always = 1
 endif
+
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = 'w'
 
 " #####################################################################
 " General
