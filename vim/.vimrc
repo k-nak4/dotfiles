@@ -43,6 +43,7 @@ filetype plugin indent off
 " #####################################################################
 
 " 基本設定
+set fenc=utf-8
 set number
 set smartcase
 set hlsearch
@@ -50,6 +51,7 @@ set showcmd
 set laststatus=2
 set wildmenu
 set hidden
+set autoread
 set backspace=indent,eol,start
 set cursorline
 set textwidth=80
