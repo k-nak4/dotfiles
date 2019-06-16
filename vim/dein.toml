@@ -26,18 +26,14 @@ repo = 'Townk/vim-autoclose'
 [[plugins]]
 repo = 'w0rp/ale'
 
-# gitgutter
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-
 # ウィンドウサイズ変更プラグイン
 [[plugins]]
 repo = 'simeji/winresizer'
 
-# Emmet
-[[plugins]]
-repo = 'mattn/emmet-vim'
-
 # 背景透過
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
+
+# LSP
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
