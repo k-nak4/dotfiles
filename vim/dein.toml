@@ -22,6 +22,9 @@ repo = 'pangloss/vim-javascript'
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
+[[plugins]]
+repo = 'alvan/vim-closetag'
+
 # ALE
 [[plugins]]
 repo = 'w0rp/ale'
@@ -36,4 +39,11 @@ repo = 'miyakogi/seiya.vim'
 
 # LSP
 [[plugins]]
+repo = 'prabirshrestha/async.vim'
 repo = 'prabirshrestha/vim-lsp'
+repo = 'prabirshrestha/asyncomplete.vim'
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+# LSP PHP
+[[plugins]]
+repo = 'felixfbecker/php-language-server'

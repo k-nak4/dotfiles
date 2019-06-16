@@ -238,18 +238,20 @@ autocmd FileType python setlocal completeopt-=preview
 " Seiya - Background transparent
 let g:seiya_auto_enable=1
 
-" Git gutter - git diff
-if exists('&signcolumn')
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
+" LSP
+let g:lsp_diagnostics_enabled=0
 
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '~'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_removed_first_line = '^'
-let g:gitgutter_sign_modified_removed = 'w'
+" LSP Debug
+let g:lsp_log_verbose=1
+let g:lsp_log_file=expand('~/vim-lsp.log')
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+
+" LSP PHP
+au User lsp_setup call lsp#register_server({
+  \ 'name': 'php-language-server',
+  \ 'cmd': {server_info->['php', expand('~/.cache/dein/repos/github.com/felixfbecker/php-language-server/bin/php-language-server.php')]},
+  \ 'whitelist': ["php"],
+  \ })
 
 " #####################################################################
 " General
