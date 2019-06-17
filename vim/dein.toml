@@ -22,22 +22,28 @@ repo = 'pangloss/vim-javascript'
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
+[[plugins]]
+repo = 'alvan/vim-closetag'
+
 # ALE
 [[plugins]]
 repo = 'w0rp/ale'
-
-# gitgutter
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
 
 # ウィンドウサイズ変更プラグイン
 [[plugins]]
 repo = 'simeji/winresizer'
 
-# Emmet
-[[plugins]]
-repo = 'mattn/emmet-vim'
-
 # 背景透過
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
+
+# LSP
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+repo = 'prabirshrestha/vim-lsp'
+repo = 'prabirshrestha/asyncomplete.vim'
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+# LSP PHP
+[[plugins]]
+repo = 'felixfbecker/php-language-server'
