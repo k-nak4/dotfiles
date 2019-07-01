@@ -36,14 +36,3 @@ repo = 'simeji/winresizer'
 # 背景透過
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
-
-# LSP
-[[plugins]]
-repo = 'prabirshrestha/async.vim'
-repo = 'prabirshrestha/vim-lsp'
-repo = 'prabirshrestha/asyncomplete.vim'
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-
-# LSP PHP
-[[plugins]]
-repo = 'felixfbecker/php-language-server'
