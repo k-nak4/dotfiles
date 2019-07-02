@@ -240,21 +240,6 @@ autocmd FileType python setlocal completeopt-=preview
 " Seiya - Background transparent
 let g:seiya_auto_enable=1
 
-" LSP
-let g:lsp_diagnostics_enabled=0
-
-" LSP Debug
-let g:lsp_log_verbose=1
-let g:lsp_log_file=expand('~/vim-lsp.log')
-let g:asyncomplete_log_file = expand('~/asyncomplete.log')
-
-" LSP PHP
-au User lsp_setup call lsp#register_server({
-  \ 'name': 'php-language-server',
-  \ 'cmd': {server_info->['php', expand('~/.cache/dein/repos/github.com/felixfbecker/php-language-server/bin/php-language-server.php')]},
-  \ 'whitelist': ["php"],
-  \ })
-
 " #####################################################################
 " General
 " #####################################################################
