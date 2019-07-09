@@ -9,7 +9,8 @@
 * screen
 
 ### Install
-1. Clone this repository.
-2. ```cd dotfiles```
-3. (Optional) Edit install.sh
-4. ```./install.sh```
+```
+git clone https://github.com/nakajiki/dotfiles ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```

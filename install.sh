@@ -10,8 +10,6 @@ OHMYZSH=1
 # path
 DOT_DIR="${HOME}/dotfiles"
 
-# ---------------------------------------------------------------------------
-
 # git
 if [ $GIT = 1 ]; then
     ln -sfv ${DOT_DIR}/.gitconfig ${HOME}/.gitconfig

@@ -24,7 +24,7 @@
         "editor.tabSize": 4
     },
     "[html]": {
-       "editor.tabSize": 2
+        "editor.tabSize": 2
     },
 
     // python
