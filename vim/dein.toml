@@ -36,3 +36,11 @@ repo = 'simeji/winresizer'
 # 背景透過
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
+
+# sudo
+[[plugins]]
+repo = 'vim-scripts/sudo.vim'
+
+# nginx
+[[plugins]]
+repo = 'chr4/nginx.vim'
