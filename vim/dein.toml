@@ -44,3 +44,7 @@ repo = 'vim-scripts/sudo.vim'
 # nginx
 [[plugins]]
 repo = 'chr4/nginx.vim'
+
+# Golang
+[[plugins]]
+repo = 'fatih/vim-go'

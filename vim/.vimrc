@@ -112,6 +112,8 @@ endif
 " Key bind
 " #####################################################################
 
+" jj
+inoremap <silent> jj <ESC>
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " 検索後のジャンプ位置変更
