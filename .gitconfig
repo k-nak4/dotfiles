@@ -4,6 +4,6 @@
 [core]
 	editor = vim
 [ghq]
-	root = /Users/nakajiki/dev/src
+	root = ~/go/src
 [color]
 	ui = auto

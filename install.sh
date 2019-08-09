@@ -33,6 +33,7 @@ fi
 # zsh
 if [ $OHMYZSH = 1 ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    ln -sfv ${DOT_DIR}/zsh/.zshrc ${HOME}/.zshrc
 else
     echo "skip: zsh"
 fi
