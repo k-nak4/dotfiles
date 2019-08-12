@@ -89,7 +89,7 @@ augroup fileTypeIndent
   autocmd BufNewFile,BufRead *.c setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
   " Golang
-  autocmd BufNewFile,BufRead *.go setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd BufNewFile,BufRead *.go setlocal tabstop=4 softtabstop=4 shiftwidth=4 | set noexpandtab
   " Python
   autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
@@ -106,7 +106,6 @@ if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
-
 
 " #####################################################################
 " Key bind
@@ -132,8 +131,6 @@ cmap w!! w !sudo tee > /dev/null %
 " <C-e>でスクリプト実行
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby%
-" NERDTree
-nnoremap <silent><C-m> :Ex<CR>
 
 " #####################################################################
 " Built-in plugin
@@ -241,6 +238,25 @@ autocmd FileType python setlocal completeopt-=preview
 
 " Seiya - Background transparent
 let g:seiya_auto_enable=1
+
+" vim-go
+let g:go_template_autocreate=1
+
+" LSP
+let g:lsp_diagnostics_enabled=0
+
+" LSP - Golang
+if executable('go-langserver')
+  augroup LspGo
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+      \ 'name': 'go-langserver',
+      \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+      \ 'whitelist': ['go'],
+      \ })
+    autocmd FileType go setlocal omnifunc=lsp#complete
+  augroup END
+endif
 
 " #####################################################################
 " General
