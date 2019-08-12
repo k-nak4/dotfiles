@@ -240,15 +240,15 @@ autocmd FileType python setlocal completeopt-=preview
 let g:seiya_auto_enable=1
 
 " vim-go
-let g:go_template_autocreate=0
+let g:go_template_autocreate=1
 
 " LSP
-if executable('golsp')
+if executable('go-langserver')
   augroup LspGo
     au!
     autocmd User lsp_setup call lsp#register_server({
-      \ 'name': 'go-lang',
-      \ 'cmd': {server_info->['bingo', '-mode', 'stdio']},
+      \ 'name': 'go-langserver',
+      \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
       \ 'whitelist': ['go'],
       \ })
     autocmd FileType go setlocal omnifunc=lsp#complete
