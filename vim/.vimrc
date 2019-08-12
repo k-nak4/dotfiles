@@ -77,8 +77,8 @@ set smartindent
 " ファイルタイプ・インデント
 augroup fileTypeIndent
   autocmd!
-  " .vimrc
-  autocmd BufNewFile,BufRead .vimrc setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " dotfiles
+  autocmd BufNewFile,BufRead .* setlocal tabstop=2 softtabstop=2 shiftwidth=2
   " HTML
   autocmd BufNewFile,BufRead *.html setlocal tabstop=2 softtabstop=2 shiftwidth=2
   " JS
