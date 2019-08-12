@@ -48,3 +48,10 @@ repo = 'chr4/nginx.vim'
 # Golang
 [[plugins]]
 repo = 'fatih/vim-go'
+
+# LSP
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
