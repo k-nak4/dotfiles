@@ -243,6 +243,9 @@ let g:seiya_auto_enable=1
 let g:go_template_autocreate=1
 
 " LSP
+let g:lsp_diagnostics_enabled=0
+
+" LSP - Golang
 if executable('go-langserver')
   augroup LspGo
     au!
