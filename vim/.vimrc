@@ -111,7 +111,7 @@ endif
 " Key bind
 " #####################################################################
 
-" jj
+" ESC -> jj
 inoremap <silent> jj <ESC>
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
@@ -241,6 +241,8 @@ let g:seiya_auto_enable=1
 
 " vim-go
 let g:go_template_autocreate=1
+let g:go_term_mode="split"
+let g:go_fmt_command="goimports"
 
 " LSP
 let g:lsp_diagnostics_enabled=0
