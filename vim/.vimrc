@@ -111,8 +111,8 @@ endif
 " Key bind
 " #####################################################################
 
-" ESC -> jj
-inoremap <silent> jj <ESC>
+" ESC -> jj & autosave
+inoremap <silent> jj <ESC>:w<CR>
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " 検索後のジャンプ位置変更
@@ -149,7 +149,7 @@ let g:netrw_preview=1
 
 " Lightline - ステータスバー装飾
 let g:lightline = {
-\   'colorscheme': 'wombat',
+\   'colorscheme': 'gruvbox',
 \   'mode_map': {'c': 'NORMAL'},
 \   'active': {
 \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
@@ -244,6 +244,9 @@ let g:go_template_autocreate=1
 let g:go_term_mode="split"
 let g:go_fmt_command="goimports"
 
+" Indent guides
+let g:indent_guides_enable_on_vim_startup=1
+
 " LSP
 let g:lsp_diagnostics_enabled=0
 
@@ -265,6 +268,6 @@ endif
 " #####################################################################
 set t_Co=256
 set background=dark
-colorscheme pencil
+colorscheme gruvbox
 filetype plugin indent on
 syntax on

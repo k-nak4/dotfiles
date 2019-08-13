@@ -26,6 +26,7 @@ if [ $VIM = 1 ]; then
     ln -sfv ${DOT_DIR}/vim/dein.toml ${HOME}/.vim/rc/dein.toml
     ln -sfv ${DOT_DIR}/vim/dein_lazy.toml ${HOME}/.vim/rc/dein_lazy.toml
     wget https://github.com/reedes/vim-colors-pencil/raw/master/colors/pencil.vim -P ${HOME}/.vim/colors
+    wget https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim -P ${HOME}/.vim/colors
 else
     echo "skip: vim"
 fi
