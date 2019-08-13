@@ -112,7 +112,7 @@ endif
 " #####################################################################
 
 " ESC -> jj & autosave
-inoremap <silent> jj <ESC>:w<CR>
+inoremap <silent> jj <ESC>
 " ESCを2回押した時にハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " 検索後のジャンプ位置変更
@@ -214,8 +214,8 @@ endfunction
 
 " ALE - Async Linter
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = 'w'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
@@ -245,7 +245,7 @@ let g:go_term_mode="split"
 let g:go_fmt_command="goimports"
 
 " Indent guides
-let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_enable_on_vim_startup=0
 
 " LSP
 let g:lsp_diagnostics_enabled=0
