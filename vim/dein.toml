@@ -23,7 +23,7 @@ repo = 'pangloss/vim-javascript'
 
 # auto close
 [[plugins]]
-repo = 'Townk/vim-autoclose'
+repo = 'cohama/lexima.vim'
 
 [[plugins]]
 repo = 'alvan/vim-closetag'
