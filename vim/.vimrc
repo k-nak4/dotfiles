@@ -58,7 +58,8 @@ set textwidth=80
 set colorcolumn=80
 set formatoptions=q
 set showtabline=2
-" highlight Normal ctermbg=none
+set ambiwidth=double
+highlight Normal ctermbg=none
 
 " 文字コード
 set encoding=utf-8
@@ -150,7 +151,7 @@ let g:netrw_preview=1
 
 " Lightline - ステータスバー装飾
 let g:lightline = {
-\   'colorscheme': 'gruvbox',
+\   'colorscheme': 'wombat',
 \   'mode_map': {'c': 'NORMAL'},
 \   'active': {
 \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
