@@ -44,7 +44,7 @@ filetype plugin indent off
 
 " 基本設定
 set fenc=utf-8
-set number
+set nonumber
 set smartcase
 set hlsearch
 set showcmd
@@ -154,65 +154,12 @@ let g:lightline = {
 \   'colorscheme': 'wombat',
 \   'mode_map': {'c': 'NORMAL'},
 \   'active': {
-\   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-\ },
+\     'left': [['mode', 'paste'], ['fugitive', 'filename']]
+\   },
 \   'component': {
-\   'readonly': '%{&readonly?"":""}',
-\ },
-\   'separator': { 'left': '', 'right': '' },
-\   'subseparator': { 'left': '', 'right': '' },
-\   'component_function': {
-\   'modified': 'LightLineModified',
-\   'readonly': 'LightLineReadonly',
-\   'fugitive': 'LightLineFugitive',
-\   'filename': 'LightLineFilename',
-\   'fileformat': 'LightLineFileformat',
-\   'filetype': 'LightLineFiletype',
-\   'fileencoding': 'LightLineFileencoding',
-\   'mode': 'LightLineMode'
+\     'readonly': '%{&readonly?"":""}',
+\   },
 \ }
-\ }
-
-function! LightLineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! LightLineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
-endfunction
-
-function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-  \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-  \  &ft == 'unite' ? unite#get_status_string() :
-  \  &ft == 'vimshell' ? vimshell#get_status_string() :
-  \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-  \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction
-
-function! LightLineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-    return fugitive#head()
-  else
-    return ''
-  endif
-endfunction
-
-function! LightLineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! LightLineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
-
-function! LightLineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
-endfunction
-
-function! LightLineMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
 
 " lightline - Bufferline
 let g:lightline#bufferline#show_number=1
@@ -226,6 +173,7 @@ let g:lightline.component_type = {'buffers': 'tabsel'}
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'x'
 let g:ale_sign_warning = 'w'
+
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
