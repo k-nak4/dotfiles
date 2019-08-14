@@ -57,6 +57,7 @@ set cursorline
 set textwidth=80
 set colorcolumn=80
 set formatoptions=q
+set showtabline=2
 " highlight Normal ctermbg=none
 
 " 文字コード
@@ -211,6 +212,14 @@ endfunction
 function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+" lightline - Bufferline
+let g:lightline#bufferline#show_number=1
+let g:lightline#bufferline#shorten_path=0
+let g:lightline#bufferline#unnamed='[No Name]'
+let g:lightline.tabline = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type = {'buffers': 'tabsel'}
 
 " ALE - Async Linter
 let g:ale_sign_column_always = 1

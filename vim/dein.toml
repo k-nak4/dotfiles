@@ -9,6 +9,9 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'shinchu/lightline-gruvbox.vim'
 
+[[plugins]]
+repo = 'mengelbrecht/lightline-bufferline'
+
 # 非同期処理を可能にする
 [[plugins]]
 repo = 'Shougo/vimproc'
