@@ -44,7 +44,8 @@ filetype plugin indent off
 
 " 基本設定
 set fenc=utf-8
-set nonumber
+set number
+set numberwidth=4
 set smartcase
 set hlsearch
 set showcmd
