@@ -18,6 +18,11 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
+# vi keybind
+bindkey -v
+
+# rbenv
+export PATH="$PATH:$HOME/.rbenv/bin"
 
 ZSH_THEME="ys"
 plugins=(git)
