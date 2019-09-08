@@ -11,8 +11,9 @@ shell /usr/bin/zsh
 startup_message off
 vbell off
 
-# Prefix
+# Keys
 escape ^Tt
+zombie ^[
 
 # スクロール
 defscrollback 10000
@@ -26,4 +27,4 @@ defbce on
 term xterm-256color
 
 # Status bar
-hardstatus alwayslastline "%{= cd} %-w%{= dd} %n %t* %{-}%+w %= LoadAVG [%l] "
+hardstatus alwayslastline "%{= cd} %-w%{= dd} %n %t* %{-}%+w %="
