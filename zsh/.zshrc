@@ -1,11 +1,20 @@
+# starship
+# eval "$(starship init zsh)"
+
+# oh-my-zsh
 export ZSH="/home/nakajima/.oh-my-zsh"
-export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin"
 ZSH_THEME="ys"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# typeset
+typeset -U PATH path
+
 # vi keybind
 bindkey -v
+
+# PATH
+export PATH="$PATH:/bin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin"
 
 # $HOME/bin
 export PATH="$PATH:$HOME/bin"
@@ -33,3 +42,6 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+# alias
+alias sp="sed -e 's/:/\n/g' | sort"
