@@ -7,3 +7,5 @@
 	root = ~/go/src
 [color]
 	ui = auto
+[push]
+	default = simple
