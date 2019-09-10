@@ -1,17 +1,24 @@
 # starship
 # eval "$(starship init zsh)"
 
-# oh-my-zsh
-export ZSH="/home/nakajima/.oh-my-zsh"
-ZSH_THEME="ys"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
+# --- oh-my-zsh ---
 
-# typeset
+if [ -e $HOME/.oh-my-zsh ]; then
+  export ZSH="/home/nakajima/.oh-my-zsh"
+  ZSH_THEME="ys"
+  plugins=(git)
+  source $ZSH/oh-my-zsh.sh
+fi
+
+# --- general settings ---
+
+bindkey -v
+
+# --- typeset ---
+
 typeset -U PATH path
 
-# vi keybind
-bindkey -v
+# --- export ---
 
 # PATH
 export PATH="$PATH:/bin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin"
@@ -31,6 +38,8 @@ if [ -e $HOME/go ]; then
   export PATH="$PATH:/usr/local/go/bin"
 fi
 
+# --- command ---
+
 # peco + ghq
 function peco-src () {
     local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
@@ -43,5 +52,6 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
-# alias
-alias sp="sed -e 's/:/\n/g' | sort"
+# --- alias ---
+
+alias spath="sed -e 's/:/\n/g' | sort"
