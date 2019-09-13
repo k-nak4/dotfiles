@@ -5,7 +5,8 @@
 GIT=1
 VIM=1
 SCREEN=1
-OHMYZSH=1
+ZSH=1
+OHMYZSH=0
 
 # path
 DOT_DIR="${HOME}/dotfiles"
@@ -31,10 +32,16 @@ else
     echo "skip: vim"
 fi
 
+# zsh
+if [ $ZSH = 1 ]; then
+    ln -sfv ${DOT_DIR}/zsh/.zshrc ${HOME}/.zshrc
+else
+    echo "skip: zsh"
+fi
+
 # oh-my-zsh
 if [ $OHMYZSH = 1 ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    ln -sfv ${DOT_DIR}/zsh/.zshrc ${HOME}/.zshrc
 else
     echo "skip: oh-my-zsh"
 fi
