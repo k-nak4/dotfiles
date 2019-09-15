@@ -21,7 +21,7 @@ typeset -U PATH path
 # --- export ---
 
 # PATH
-export PATH="$PATH:/bin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # $HOME/bin
 export PATH="$PATH:$HOME/bin"
@@ -36,6 +36,11 @@ if [ -e $HOME/go ]; then
   export GOPATH=$HOME/go
   export PATH="$PATH:$GOPATH/bin"
   export PATH="$PATH:/usr/local/go/bin"
+fi
+
+# Driver
+if [ -e $HOME/driver ]; then
+  export PATH="$PATH:$HOME/driver"
 fi
 
 # --- command ---
@@ -54,4 +59,8 @@ bindkey '^]' peco-src
 
 # --- alias ---
 
-alias spath="sed -e 's/:/\n/g' | sort"
+alias spath="sed -e 's/:/\n/g'"
+
+if type lsof > /dev/null 2>&1; then
+  alias show_listen="lsof -i -P | grep 'LISTEN'"
+fi
