@@ -5,7 +5,7 @@
 GIT=1
 VIM=1
 SCREEN=1
-ZSH=1
+ZSH=0
 OHMYZSH=0
 
 # path

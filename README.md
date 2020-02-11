@@ -2,16 +2,16 @@
 
 ### Requirements
 
-* wget
+- wget
 
 ### Install
 
-```
-git clone https://github.com/nakajiki/dotfiles ~/dotfiles
-cd ~/dotfiles
+```shell
+git clone https://github.com/sianf/dotfiles
+cd dotfiles
 ./install.sh
 ```
 
-### Golang - LSP
+### vim-lsp
 
-```go get -u github.com/sourcegraph/go-langserver```
+https://github.com/mattn/vim-lsp-settings
