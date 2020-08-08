@@ -4,14 +4,11 @@
 
 - wget
 
-### Install
+### Installation
 
 ```shell
-git clone https://github.com/sianf/dotfiles
-cd dotfiles
-./install.sh
+% git clone git@github.com:nakajima0301/dotfiles.git ~
+% cd ~/dotfiles
+% ./install.sh
 ```
 
-### vim-lsp
-
-https://github.com/mattn/vim-lsp-settings
