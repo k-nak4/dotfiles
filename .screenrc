@@ -1,30 +1,27 @@
-# 文字エンコード
+# Encoding
 defutf8 on
 encoding utf-8 utf-8
 defencoding utf-8
 defkanji utf-8
 
 # shell
-shell /bin/bash
-
-# いらない機能を停止
-startup_message off
-vbell off
-
-# Keys
-escape ^Tt
-zombie ^[
-
-# スクロール
-defscrollback 10000
-termcapinfo xterm* ti@:te@
-
-# vimとかのバッファをクリアする
-altscreen on
-
-# 256対応
-defbce on
-term xterm-256color
+shell /usr/bin/zsh
 
 # Status bar
 hardstatus alwayslastline "%{= cd} %-w%{= dd} %n %t* %{-}%+w %="
+
+# Key bind
+escape ^Tt
+zombie ^[
+
+# Common
+defscrollback 10000
+termcapinfo xterm* ti@:te@
+altscreen on
+defbce on
+term xterm-256color
+
+# Deactivate
+startup_message off
+vbell off
+

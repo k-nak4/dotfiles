@@ -1,66 +1,38 @@
-# starship
-# eval "$(starship init zsh)"
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+# -------- zinit --------
 
-# --- oh-my-zsh ---
+# Prompt
+zinit light romkatv/powerlevel10k
 
-if [ -e $HOME/.oh-my-zsh ]; then
-  export ZSH="/home/nakajima/.oh-my-zsh"
-  ZSH_THEME="ys"
-  plugins=(git)
-  source $ZSH/oh-my-zsh.sh
-fi
+# shell
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
 
-# --- general settings ---
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-bindkey -v
-
-# --- typeset ---
-
-typeset -U PATH path
-
-# --- export ---
+# -------------------------------------------------------------------- #
 
 # PATH
-export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/go/1.14.3/bin"
 
-# $HOME/bin
-export PATH="$PATH:$HOME/bin"
+# Alias
+alias ll="ls -l"
+alias lv='ls -lv'
 
-# Composer
-if [ -e $HOME/.config/composer/vendor/bin ]; then
-  export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-fi
-
-# Golang
-if [ -e $HOME/go ]; then
-  export GOPATH=$HOME/go
-  export PATH="$PATH:$GOPATH/bin"
-  export PATH="$PATH:/usr/local/go/bin"
-fi
-
-# Driver
-if [ -e $HOME/driver ]; then
-  export PATH="$PATH:$HOME/driver"
-fi
-
-# --- command ---
-
-# peco + ghq
-function peco-src () {
-    local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-    fi
-    zle clear-screen
-}
-zle -N peco-src
+# Key bind
 bindkey '^]' peco-src
 
-# --- alias ---
-
-alias spath="sed -e 's/:/\n/g'"
-
-if type lsof > /dev/null 2>&1; then
-  alias show_listen="lsof -i -P | grep 'LISTEN'"
-fi
+# Function
+function peco-src() {
+  local src=$(ghq list --full-path | peco --query "$LDBUFFER")
+  if [ -n "$src" ]; then
+    BUFFER="cd $src"
+    zle accept-line
+  fi
+  zle -R -c
+}
+zle -N peco-src
