@@ -9,3 +9,5 @@
 	ui = auto
 [push]
 	default = simple
+[pull]
+	rebase = false
