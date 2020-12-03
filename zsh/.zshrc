@@ -15,6 +15,7 @@ zinit light zsh-users/zsh-autosuggestions
 # PATH
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/go/1.14.3/bin"
+PATH="$PATH:$HOME/.anyenv/bin"
 
 # Alias
 alias ll="ls -l"
@@ -33,3 +34,6 @@ function peco-src() {
   zle -R -c
 }
 zle -N peco-src
+
+# anyenv
+eval "$(anyenv init -)"
